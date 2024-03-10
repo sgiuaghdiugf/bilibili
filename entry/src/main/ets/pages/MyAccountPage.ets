@@ -135,6 +135,16 @@ import {Item,buildItem,BottomBar} from '../components/BottomBar'
 }
 @Builder function buildBar(){
 
+  Row(){
+    buildItem(new Item($r('app.media.lixianhuancun'),'离线缓存'),40,40,25,10,'#52a4c5')
+    buildItem(new Item($r('app.media.lishijilu'),'历史记录'),40,40,25,10,'#52a4c5')
+    buildItem(new Item($r('app.media.wodeshoucang'),'我的收藏'),40,40,25,10,'#52a4c5')
+    buildItem(new Item($r('app.media.shaohouzaikan'),'稍后再看'),40,40,25,10,'#52a4c5')
+  }
+  .justifyContent(FlexAlign.SpaceAround)
+  // .backgroundColor('#fefe')
+  .width('100%')
+  .height(70)
 }
 @Entry
 @Component
@@ -180,6 +190,8 @@ struct MyAccountPage {
       .height(40)
 
       buildActivity()
+
+      buildBar()
 
       Blank()
       BottomBar()
