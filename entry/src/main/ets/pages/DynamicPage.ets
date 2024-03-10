@@ -32,8 +32,6 @@ struct DynamicPage {
       .layoutWeight(1)
 
       BottomBar()
-      //   .layoutWeight(1)
-
 
     }
   }
