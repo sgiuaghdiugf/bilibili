@@ -1,4 +1,4 @@
-export class Blob {
+export class Blog {
   headImage: ResourceStr
   title: string
   updateTime: string
@@ -30,9 +30,9 @@ import { BlobCardHeader } from './BlogCardHeader'
 import { BlogCardBeneath } from './BlogCardBeneath'
 
 @Component
-export struct BlobCard {
+export struct BlogCard {
   // private content_01 = "纪录片好奇心周刊\n这是一个关于【她】的节日 纪录片的镜头，也曾拍摄下【她】的精彩瞬 间"
-  private blog: Blob
+  private blog: Blog
 
   build() {
     Column() {
