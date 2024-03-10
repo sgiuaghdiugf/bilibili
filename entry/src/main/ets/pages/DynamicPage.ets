@@ -1,5 +1,6 @@
-import { DynamicHeader } from '../Component/DynamicHeader'
-import { BlobCard, Blob } from '../Component/BlobCard'
+import { DynamicHeader } from '../components/DynamicHeader'
+import { BlobCard, Blob } from '../components/BlobCard'
+import {BottomBar} from  "../components/BottomBar"
 
 
 @Entry
@@ -28,6 +29,11 @@ struct DynamicPage {
           })
       }
       .backgroundColor('#F0F2F4')
+      .layoutWeight(1)
+
+      BottomBar()
+      //   .layoutWeight(1)
+
 
     }
   }
