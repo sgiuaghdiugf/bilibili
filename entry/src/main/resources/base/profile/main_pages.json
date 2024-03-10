@@ -1,5 +1,7 @@
 {
   "src": [
-    "pages/Rank"
+    "pages/Rank",
+    "pages/Rank_Top",
+    "pages/MyAccountPage"
   ]
 }

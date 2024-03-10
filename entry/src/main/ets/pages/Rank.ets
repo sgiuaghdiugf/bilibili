@@ -6,19 +6,28 @@ import { FONT_COLOR_CHOSE, FONT_COLOR_UNCHOSE, Rank_Top } from './Rank_Top'
   .fontColor(FONT_COLOR_UNCHOSE)
 }
 
+class work{
+  img : Resource
+  title : string
+
+}
+
 @Entry
 @Component
 struct Index {
   @State arr:number[] =[0,1,2,3,4,5,6,7,8,9]
-  @State index:number=1
+  @State index:number=0
+  // @State Janime:
   build() {
     Column() {
       Row(){
         Rank_Top()
+        // Image()
       }
 
       Column(){
         this.rank()
+
       }
     }
   }
