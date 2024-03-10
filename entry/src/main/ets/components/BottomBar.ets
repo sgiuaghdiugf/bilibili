@@ -58,6 +58,7 @@ export struct BottomBar {
     .width('100%')
     .height(65)
     .padding({left:10,right:10})
+    .backgroundColor(Color.White)
   }
 
 }

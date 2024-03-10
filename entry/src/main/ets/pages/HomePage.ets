@@ -1,5 +1,6 @@
 
 import { Recommend } from '../components/Recommend'
+import {BottomBar} from '../components/BottomBar'
 
 @Entry
 @Component
@@ -72,6 +73,9 @@ struct HomePage {
       .justifyContent(FlexAlign.End)
 
       Recommend()
+        .layoutWeight(1)
+
+      BottomBar()
     }
     .width('100%')
     .height('100%')

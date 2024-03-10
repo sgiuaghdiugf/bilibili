@@ -81,33 +81,31 @@ export struct Recommend {
 
   build() {
     Column(){
-      List(){
-        Swiper(this.swiperController) {
-          LazyForEach(this.data, (item: SwiperInfo) => {
-            Stack(){
-              Image(item.pic).width('100%').border({radius: 10})
-              Text(item.title)
-                .fontSize(12)
-                .fontColor(Color.White)
-                .position({x: 10, y: 178})
-            }
-            .width('100%')
+      Swiper(this.swiperController) {
+        LazyForEach(this.data, (item: SwiperInfo) => {
+          Stack(){
+            Image(item.pic).width('100%').border({radius: 10})
+            Text(item.title)
+              .fontSize(12)
+              .fontColor(Color.White)
+              .position({x: 10, y: 178})
+          }
+          .width('100%')
 
-          }, item => item)
-        }
-        .cachedCount(2)
-        .index(1)
-        .autoPlay(true)
-        .interval(3000)
-        .indicator(true)
-        .loop(true)
-        .duration(1000)
-        .itemSpace(0)
-        .curve(Curve.Linear)
-        .margin(3)
-        .itemSpace(10)
-        .indicatorStyle({right: 10, size: 12, color: '#8a8182', selectedColor: Color.White})
+        }, item => item)
       }
+      .cachedCount(2)
+      .index(1)
+      .autoPlay(true)
+      .interval(3000)
+      .indicator(true)
+      .loop(true)
+      .duration(1000)
+      .itemSpace(0)
+      .curve(Curve.Linear)
+      .margin(3)
+      .itemSpace(10)
+      .indicatorStyle({right: 10, size: 12, color: '#8a8182', selectedColor: Color.White})
 
       List(){
         ForEach(this.videos, (video: video) => {
