@@ -1,5 +1,10 @@
 {
   "src": [
-    "pages/Index"
+    "pages/Index",
+<<<<<<< HEAD
+    "pages/HomePage"
+=======
+    "pages/MyAccountPage"
+>>>>>>> c9d03cda7c704d97a9f9d9e9cd8afd5e11e666f1
   ]
 }
