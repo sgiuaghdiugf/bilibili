@@ -1,11 +1,8 @@
 {
   "src": [
     "pages/Index",
-<<<<<<< HEAD
     "pages/HomePage",
-=======
     "pages/DynamicPage",
->>>>>>> ab2ff4c4b699fa143d55bc2bda543c2d2ef2ef02
     "pages/MyAccountPage"
   ]
 }
