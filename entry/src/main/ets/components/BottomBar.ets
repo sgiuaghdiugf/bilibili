@@ -10,13 +10,20 @@ export class Item{
     this.name= name;
   }
 }
-@Builder export function buildItem(item:Item,column_width:number,column_height:number,icon_width:number,font_size:number){
+@Builder export function buildItem(item:Item,column_width:number,
+                                   column_height:number,icon_width:number,
+                                   font_size:number,icon_color?:string,
+                                    f?:Function){
   Column({space:5}){
     Image(item.icon)
+      .fillColor(icon_color)
       .width(icon_width)
     Text(item.name)
       .fontSize(font_size)
   }
+  .onClick(()=>{
+    f
+  })
   .justifyContent(FlexAlign.SpaceAround)
   .width(column_width)
   .height(column_height)
@@ -57,7 +64,9 @@ export struct BottomBar {
     .justifyContent(FlexAlign.SpaceBetween)
     .width('100%')
     .height(65)
+    .backgroundColor('#fefefe')
     .padding({left:10,right:10})
+    .backgroundColor(Color.White)
   }
 
 }
