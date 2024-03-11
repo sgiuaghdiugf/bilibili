@@ -6,11 +6,16 @@ struct CustomDialogExample {
   build() {
     Column() {
       Image(this.dialogImage)
+        .width('100%')
         .onClick(() => {
           this.controller.close()
         })
 
     }
+    .height('100%')
+    .width('100%')
+    .justifyContent(FlexAlign.Center)
+    .backgroundColor('#000000')
   }
 }
 
