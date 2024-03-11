@@ -17,6 +17,7 @@
     "pages/HomePage",
     "pages/DynamicPage",
     "pages/MyAccountPage",
-    "pages/ShowImagePage"
+    "pages/ShowImagePage",
+    "pages/Account_Data"
   ]
 }
