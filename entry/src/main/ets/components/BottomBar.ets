@@ -30,7 +30,6 @@ export class Item{
 }
 
 
-@Entry
 @Component
 export struct BottomBar {
   private items:Item[]=[
@@ -69,5 +68,53 @@ export struct BottomBar {
     .backgroundColor(Color.White)
   }
 
+}
+
+@Component
+export struct LineItem{
+  icon:Resource;
+  item_name:string;
+  icon_back:Resource;
+  build(){
+    Row(){
+      Image(this.icon)
+        .width(23)
+        .margin({left:20})
+
+      Text(this.item_name)
+        .fontSize(14)
+        .margin({left:15})
+
+      Blank()
+
+      Image(this.icon_back)
+        .width(16)
+        .margin({right:10})
+    }
+    .height(40)
+    .width('98%')
+  }
+}
+
+@Component
+export struct MyWalletPageHead{
+  icon:Resource;
+  page_name:string;
+  icon_msg:Resource;
+
+  build(){
+    Row(){
+      Image(this.icon)
+        .width(20)
+
+      Text(this.page_name)
+
+      Image(this.icon_msg)
+        .width(20)
+    }
+    .height(40)
+    .justifyContent(FlexAlign.SpaceAround)
+    .width('100%')
+  }
 }
 
