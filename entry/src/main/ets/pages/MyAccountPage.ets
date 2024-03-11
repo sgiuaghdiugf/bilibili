@@ -6,8 +6,8 @@ import {Item,buildItem,BottomBar} from '../components/BottomBar'
       Row(){
         Image($r('app.media.touping'))
           .height('50%')
-        Image($r('app.media.saoyisao'))
-          .height('43%')
+        Image($r('app.media.saoyisao_2'))
+          .height('55%')
         Image($r('app.media.yifu'))
           .height('58%')
         Image($r('app.media.yejian'))
@@ -136,7 +136,7 @@ import {Item,buildItem,BottomBar} from '../components/BottomBar'
 @Builder function buildBar(){
 
   Row(){
-    buildItem(new Item($r('app.media.lixianhuancun'),'离线缓存'),40,40,25,10,'#52a4c5')
+    buildItem(new Item($r('app.media.lixianhuancun'),'离线缓存'),40,40,25,10, '#52a4c5')
     buildItem(new Item($r('app.media.lishijilu'),'历史记录'),40,40,25,10,'#52a4c5')
     buildItem(new Item($r('app.media.wodeshoucang'),'我的收藏'),40,40,25,10,'#52a4c5')
     buildItem(new Item($r('app.media.shaohouzaikan'),'稍后再看'),40,40,25,10,'#52a4c5')
@@ -144,8 +144,80 @@ import {Item,buildItem,BottomBar} from '../components/BottomBar'
   .justifyContent(FlexAlign.SpaceAround)
   // .backgroundColor('#fefe')
   .width('100%')
-  .height(70)
+  .height(100)
 }
+@Builder function buildActivity2(){
+  Row(){
+    Column(){
+      Row(){
+        Row(){
+          Text('UP')
+            .fontSize(10)
+            .fontColor('#fcf7f8')
+            .fontWeight(FontWeight.Bolder)
+        }
+        .margin({left:10})
+        .width(20)
+        .height(15)
+        .justifyContent(FlexAlign.Center)
+        .borderRadius(5)
+        .backgroundColor('#fb7398')
+
+        Text('发布你的第一个视频')
+          .margin({left:10})
+          .fontSize(14)
+          .fontWeight(FontWeight.Bold)
+          .fontColor('#636363')
+      }
+      .width('100%')
+
+      Row(){
+        Text('领限定头像挂件，赢活动奖金')
+          .fontWeight(FontWeight.Bold)
+          .margin({left:10})
+          .fontSize(12)
+          .fontColor('#a0a0a0')
+
+        Image($r('app.media.qianwang'))
+          .fillColor('#9a8e90')
+          .width('6%')
+      }
+      .width('100%')
+
+    }
+    .justifyContent(FlexAlign.SpaceEvenly)
+    .width('50%')
+    .height('100%')
+
+
+    Row(){
+      Image($r('app.media.MyAccountPage_shangchuan'))
+        .width(15)
+
+      Text('有奖发布')
+        .fontColor('#ffff')
+        .fontSize(12)
+        .margin({left:5})
+    }
+    .margin(10)
+    .justifyContent(FlexAlign.Center)
+    .borderRadius(15)
+    .width(90)
+    .height(30)
+    .backgroundColor('#ff679a')
+  }
+  .linearGradient({
+    direction:GradientDirection.Right,
+    colors: [['#ffffff', 0.0], ['#ffecf0', 1.0]]
+  })
+  .border({width:1,color:'#e1dfe0'})
+  .justifyContent(FlexAlign.SpaceBetween)
+  .borderRadius(8)
+  .width('96%')
+  .height(65)
+}
+
+
 @Entry
 @Component
 struct MyAccountPage {
@@ -192,6 +264,8 @@ struct MyAccountPage {
       buildActivity()
 
       buildBar()
+
+      buildActivity2()
 
       Blank()
       BottomBar()

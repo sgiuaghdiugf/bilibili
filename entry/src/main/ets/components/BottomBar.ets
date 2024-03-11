@@ -22,7 +22,7 @@ export class Item{
       .fontSize(font_size)
   }
   .onClick(()=>{
-    f
+    f()
   })
   .justifyContent(FlexAlign.SpaceAround)
   .width(column_width)
