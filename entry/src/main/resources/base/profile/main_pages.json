@@ -1,13 +1,11 @@
 {
   "src": [
     "pages/Rank",
-
     "pages/HomePage",
-
     "pages/DynamicPage",
     "pages/HomePage",
     "pages/DynamicPage",
-
-    "pages/MyAccountPage"
+    "pages/MyAccountPage",
+    "pages/Setting"
   ]
 }

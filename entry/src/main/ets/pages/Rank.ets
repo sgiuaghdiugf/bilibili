@@ -60,6 +60,7 @@ struct Index {
     $r('app.media.rank4'),
     $r('app.media.rank5'),
     $r('app.media.rank6'),
+    $r('app.media.rank0'),
   ]
 
   build() {
@@ -135,14 +136,30 @@ struct Index {
     ForEach((this.index==0 ? this.Janime : (this.index==1 ? this.Canime : this.Fanime)),(item:work,index)=>{
       ListItem(){
         Row(){
-          Column(){
-            Image(this.rankNumber[index])
-              .width(40)
-              .height(60)
-              .margin({left:5,right:-10})
+          if(index<3){
+            Column(){
+              Image(this.rankNumber[index])
+                .width(40)
+                .margin({left:5,right:-7})
+            }
+            .justifyContent(FlexAlign.Start)
+            .height('100%')
           }
-          .justifyContent(FlexAlign.Start)
-          .height('100%')
+          else {
+            Column(){
+              Image(this.rankNumber[6])
+                .width(20)
+                .margin({left:5,right:-5})
+            }.justifyContent(FlexAlign.Start)
+            .height('100%')
+            Column(){
+              Image(this.rankNumber[index])
+                .width(20)
+                .margin({left:5})
+            }
+            .justifyContent(FlexAlign.Start)
+            .height('100%')
+          }
 
           Column(){
               Image(item.img)
