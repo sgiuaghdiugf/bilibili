@@ -4,6 +4,10 @@
     "pages/HomePage",
     "pages/DynamicPage",
     "pages/MyAccountPage",
-    "pages/MyWalletPage"
+    "pages/MyWalletPage",
+    "pages/HomePage",
+    "pages/DynamicPage",
+    "pages/MyAccountPage",
+    "pages/ShowImagePage"
   ]
 }
