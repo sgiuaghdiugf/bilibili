@@ -1,6 +1,7 @@
 import { DynamicHeader } from '../components/DynamicHeader'
 import { BlogCard, Blog } from '../components/BlogCard'
 import { BottomBar } from "../components/BottomBar"
+import { DynamicUserList } from "../components/DynamicUserList"
 
 
 @Entry
@@ -21,8 +22,11 @@ struct DynamicPage {
       DynamicHeader()
 
 
-
       List() {
+        ListItem() {
+          DynamicUserList()
+        }
+
         ForEach(this.blogCards,
           (blog: Blog) => {
             ListItem() {
