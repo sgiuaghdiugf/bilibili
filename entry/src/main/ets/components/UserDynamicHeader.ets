@@ -1,6 +1,7 @@
 import router from '@ohos.router'
+
 @Component
-export  struct UserDynamicHeader {
+export struct UserDynamicHeader {
   build() {
     Column() {
       Stack() {
@@ -195,7 +196,7 @@ export  struct UserDynamicHeader {
       }
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
-      .padding({ left: 10, right: 10 })
+      .padding({ left: 10, right: 20 })
       .margin({ left: 10 })
 
       Row() {
@@ -219,7 +220,6 @@ export  struct UserDynamicHeader {
 
       Row() {
         Row() {
-
           Text("主页")
             .fontSize(16)
         }
@@ -240,6 +240,7 @@ export  struct UserDynamicHeader {
             .padding(10)
         }
       }
+      .height(40)
       .width('100%')
       .justifyContent(FlexAlign.SpaceAround)
       .margin({ top: 20 })
