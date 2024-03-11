@@ -37,9 +37,15 @@ struct Index {
     new work($r('app.media.J5'),'间谍过家家','远藤达哉','都市','更新至95话'),
     new work($r('app.media.J6'),'香格里拉边境','硬梨菜 不二凉介 讲谈社','游戏竞技','更新至169话'),
   ]
-  // @State rankNumber:Resource[]=[
-  //
-  // ]
+  @State
+  @State rankNumber:Resource[]=[
+    $r('app.media.rank1'),
+    $r('app.media.rank2'),
+    $r('app.media.rank3'),
+    $r('app.media.rank4'),
+    $r('app.media.rank5'),
+    $r('app.media.rank6'),
+  ]
 
   build() {
     Column() {
@@ -52,6 +58,7 @@ struct Index {
         this.rank()
 
       }
+
     }
     .backgroundColor(BACKGOURNDCOLOR)
   }
@@ -110,11 +117,11 @@ struct Index {
       .height(40)
     }
 
-    ForEach(this.Janime,(item:work)=>{
+    ForEach(this.Janime,(item:work,index)=>{
       ListItem(){
         Row(){
           Column(){
-            Image($r('app.media.rank1'))
+            Image(this.rankNumber[index])
               .width(40)
               .height(60)
               .margin({left:5,right:-10})
@@ -175,6 +182,7 @@ struct Index {
   }
   .scrollBar(BarState.Auto)
   .edgeEffect(EdgeEffect.Spring)
+
 }
 
 }
