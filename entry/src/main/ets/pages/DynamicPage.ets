@@ -19,6 +19,9 @@ struct DynamicPage {
   build() {
     Column() {
       DynamicHeader()
+
+
+
       List() {
         ForEach(this.blogCards,
           (blog: Blob) => {
