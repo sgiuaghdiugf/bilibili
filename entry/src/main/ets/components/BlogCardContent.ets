@@ -1,34 +1,9 @@
-// @CustomDialog
-// struct CustomDialogExample {
-//   controller: CustomDialogController
-//   @Link dialogImage: ResourceStr
-//
-//   build() {
-//     Column() {
-//       Image(this.dialogImage)
-//         .width('100%')
-//         .onClick(() => {
-//           this.controller.close()
-//         })
-//
-//     }
-//     .height('100%')
-//     .width('100%')
-//     .justifyContent(FlexAlign.Center)
-//     .backgroundColor('#000000')
-//   }
-// }
+import router from '@ohos.router'
 
 @Component
 export struct BlogCardContent {
-  // @State image: ResourceStr = $r('app.media.01')
   private image: ResourceStr = $r('app.media.01')
   private content: ResourceStr
-  // dialogController: CustomDialogController = new CustomDialogController({
-  //   builder: CustomDialogExample({
-  //     dialogImage: $image
-  //   }),
-  // })
 
   build() {
     Column() {
@@ -38,8 +13,13 @@ export struct BlogCardContent {
       Image(this.image)
         .width(200)
         .onClick(() => {
-          // this.dialogController.open()
-
+          router.pushUrl({
+            url: "pages/ShowImagePage",
+            params: { image: this.image }
+          }, router.RouterMode.Single, (err) => {
+            console.log(err.message)
+            return
+          })
         })
 
     }
