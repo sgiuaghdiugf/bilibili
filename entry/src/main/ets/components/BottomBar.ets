@@ -23,7 +23,7 @@ export function buildItem(item: Item, column_width: number,
       .fontSize(font_size)
   }
   .onClick(() => {
-    f
+    f()
   })
   .justifyContent(FlexAlign.SpaceAround)
   .width(column_width)
