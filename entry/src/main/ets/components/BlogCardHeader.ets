@@ -1,12 +1,4 @@
-// export class BlogCarHEader {
-//   image: ResourceStr
-//   title: string
-//   updateTime: string
-//
-//   constructor(image: ResourceStr, title: string, updateTime: string) {
-//     this.image = image, this.title = title, this.updateTime = updateTime
-//   }
-// }
+import router from '@ohos.router'
 
 @Component
 export struct BlobCardHeader {
@@ -16,15 +8,32 @@ export struct BlobCardHeader {
 
   build() {
     Row() {
-      Image(this.image)
-        .width(36)
-        .borderRadius(18)
+      Stack() {
+        Image(this.image)
+          .width(40)
+          .borderRadius(20)
+          .onClick(() => {
+            router.pushUrl({ url: "pages/UserDynamicPage",
+              params: { title: this.title }
+            }, router.RouterMode.Single, (err) => {
+              if (err) {
+                console.log(err.message)
+              }
+            })
+          })
+
+        Image($r('app.media.float_image'))
+          .width(15)
+          .position({ x: 26, y: 26 })
+
+
+      }
 
       Row() {
         Column() {
           Text(this.title)
-            .fontSize(20)
-            .fontColor('#FC8BAB')
+            .fontSize(16)
+            .fontColor($r('app.color.pink'))
             .fontWeight(FontWeight.Bold)
             .width('80%')
           Text(this.updateTime)
@@ -33,12 +42,12 @@ export struct BlobCardHeader {
             .width('80%')
         }
       }
-      .margin({ left: 15})
+      .margin({ left: 15 })
 
       Image($r('app.media.dynamic_specific'))
         .width(20)
     }
-    .margin({bottom:20})
+    .margin({ bottom: 20 })
     .width('100%')
   }
 }

@@ -1,7 +1,5 @@
 {
   "src": [
-    <<<<<<<
-    HEAD
     "pages/Rank",
     "pages/HomePage",
     "pages/DynamicPage",
@@ -14,6 +12,6 @@
     "pages/DynamicPage",
     "pages/MyAccountPage",
     "pages/ShowImagePage",
-    "pages/Index"
+    "pages/UserDynamicPage"
   ]
 }
