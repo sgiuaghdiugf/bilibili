@@ -33,7 +33,7 @@ export struct BlobCardHeader {
         Column() {
           Text(this.title)
             .fontSize(16)
-            .fontColor('#FC8BAB')
+            .fontColor($r('app.color.pink'))
             .fontWeight(FontWeight.Bold)
             .width('80%')
           Text(this.updateTime)
