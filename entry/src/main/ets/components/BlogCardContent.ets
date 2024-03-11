@@ -8,7 +8,7 @@ export struct BlogCardContent {
   build() {
     Column() {
       Text(this.content)
-        .fontSize(20)
+        .fontSize(18)
         .margin({ bottom: 15 })
       Image(this.image)
         .width(200)
