@@ -6,6 +6,17 @@
     "pages/HomePage",
     "pages/DynamicPage",
     "pages/MyAccountPage",
-    "pages/Setting"
+    "pages/Setting",
+    "pages/HomePage",
+    "pages/DynamicPage",
+    "pages/Index",
+    "pages/HomePage",
+    "pages/DynamicPage",
+    "pages/MyAccountPage",
+    "pages/MyWalletPage",
+    "pages/HomePage",
+    "pages/DynamicPage",
+    "pages/MyAccountPage",
+    "pages/ShowImagePage"
   ]
 }
