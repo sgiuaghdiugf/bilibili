@@ -1,7 +1,6 @@
 {
   "src": [
     "pages/Rank",
-    "pages/Rank_Top",
     "pages/HomePage",
     "pages/DynamicPage",
     "pages/MyAccountPage"
