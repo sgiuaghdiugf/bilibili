@@ -82,10 +82,22 @@ export struct DynamicUserList {
         ForEach(this.persons, (person: Person) => {
           ListItem() {
             Column() {
-              Image(person.image)
-                .width(54)
-                .borderRadius(27)
-                .margin({ bottom: 10 })
+              Stack() {
+                Image(person.image)
+                  .width(54)
+                  .borderRadius(27)
+                  .margin({ bottom: 10 })
+                Row() {
+                }
+                .width(14)
+                .height(14)
+                .backgroundColor('#FF589A')
+                .borderRadius(7)
+                .border({ width: 3, color: Color.White })
+                .position({ x: 40, y: 40 })
+
+              }
+
               Text(person.name)
                 .fontSize(14)
             }

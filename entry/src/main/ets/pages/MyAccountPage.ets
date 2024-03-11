@@ -1,5 +1,6 @@
 import font from '@ohos.font'
 import { LineItem, Item, buildItem, BottomBar } from '../components/BottomBar'
+import * as fun from '../sch_functions/click_function'
 
 @Builder
 export function buildGridItem(item: Item, column_width: number,
@@ -244,7 +245,7 @@ export function buildGridItem(item: Item, column_width: number,
   .height(65)
 }
 
-@Builder function buildServe(items: Item[]) {
+@Builder function buildServe(items: Item[],f:Function[]) {
   Column({ space: 15 }) {
     Text('推荐服务')
       .margin({ top: 20 })
@@ -259,9 +260,9 @@ export function buildGridItem(item: Item, column_width: number,
     ) {
       ForEach(
         items,
-        (item: Item) => {
+        (item: Item,index:number) => {
           GridCol() {
-            buildGridItem(item, 80, 50, 23, 11)
+            buildGridItem(item, 80, 50, 23, 11,'#ee79a1',f[index])
           }
         }
       )
@@ -280,7 +281,7 @@ export function buildGridItem(item: Item, column_width: number,
       .width('95%')
       .margin({ top: 16 })
 
-    Column({space:6}) {
+    Column({ space: 6 }) {
       LineItem({
         icon: $r('app.media.sch_lianxikefu'),
         item_name: '联系客服', icon_back:
@@ -303,7 +304,7 @@ export function buildGridItem(item: Item, column_width: number,
         $r('app.media.qianwang')
       })
     }
-    .margin({top:6})
+    .margin({ top: 6 })
   }
   .width('100%')
 }
@@ -328,6 +329,24 @@ struct MyAccountPage {
     new Item($r('app.media.sch_bilibiligongyi'), '哔哩哔哩公益'),
     new Item($r('app.media.sch_nengliangjiayouzhan'), '能量加油站'),
     new Item($r('app.media.sch_dahuiyuanxianshiyouhui'), '大会员限时优惠'),
+  ]
+
+  private router_functions:Function[]=[
+    fun.my_course_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_wallet_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
+    fun.my_space_onclick,
   ]
 
   build() {
@@ -371,32 +390,27 @@ struct MyAccountPage {
       buildActivity()
 
 
-
-
-
       List() {
 
-        ListItem(){
+        ListItem() {
           buildBar()
         }
 
-        ListItem(){
+        ListItem() {
           buildActivity2()
         }
 
         ListItem() {
-          buildServe(this.serveItems)
+          buildServe(this.serveItems,this.router_functions)
         }
 
         ListItem() {
           buildMoreServer()
         }
-
       }
       .alignListItem(ListItemAlign.Center)
       .width('100%')
       .layoutWeight(1)
-
 
       Blank()
       BottomBar()

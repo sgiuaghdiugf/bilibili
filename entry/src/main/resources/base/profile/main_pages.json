@@ -18,6 +18,10 @@
     "pages/DynamicPage",
     "pages/MyAccountPage",
     "pages/ShowImagePage",
+<<<<<<< HEAD
     "pages/Account_Data"
+=======
+    "pages/UserDynamicPage"
+>>>>>>> e387533ef25fea568c0fe1d2bfa8c125744fbe7b
   ]
 }
