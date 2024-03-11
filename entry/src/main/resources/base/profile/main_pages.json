@@ -12,6 +12,7 @@
     "pages/DynamicPage",
     "pages/MyAccountPage",
     "pages/ShowImagePage",
-    "pages/UserDynamicPage"
+    "pages/UserDynamicPage",
+    "pages/MumberShopPage"
   ]
 }

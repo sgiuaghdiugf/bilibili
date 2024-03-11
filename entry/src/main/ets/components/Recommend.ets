@@ -175,6 +175,7 @@ export struct Recommend {
       .layoutWeight(1)
       .margin({left: 5})
       .lanes({maxLength: 175, minLength: 175})
+      // .lanes(2)
     }
   }
 }
