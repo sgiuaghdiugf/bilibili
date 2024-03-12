@@ -39,7 +39,17 @@ export function my_collect_onclick() {
     }
   )
 }
-
+export function my_setting_onclick(){
+  router.pushUrl(
+    {
+      url: 'pages/MyWalletPage'
+    },
+    router.RouterMode.Single,
+    err => {
+      console.log("我的钱包页面跳转失败")
+    }
+  )
+}
 export function my_history_onclick() {
   router.pushUrl(
     {

@@ -160,18 +160,23 @@ export function buildGridItem(item: Item, column_width: number,
   .height(50)
 }
 
-@Builder function buildBar() {
-
-  Row() {
-    buildItem(new Item($r('app.media.lixianhuancun'), '离线缓存'), 40, 50, 25, 10, '#52a4c5')
-    buildItem(new Item($r('app.media.lishijilu'), '历史记录'), 40, 50, 25, 10, '#52a4c5')
-    buildItem(new Item($r('app.media.wodeshoucang'), '我的收藏'), 40, 50, 25, 10, '#52a4c5')
-    buildItem(new Item($r('app.media.shaohouzaikan'), '稍后再看'), 40, 50, 25, 10, '#52a4c5')
+@Component
+struct buildBar {
+  private router_02_functions: Function[] = [
+  fun.my_surplus_onclick, fun.my_history_onclick,fun.my_collect_onclick, fun.my_surplus_onclick
+  ]
+  build() {
+    Row() {
+      buildItem(new Item($r('app.media.lixianhuancun'), '离线缓存'), 40, 50, 25, 10, '#52a4c5',this.router_02_functions[0])
+      buildItem(new Item($r('app.media.lishijilu'), '历史记录'), 40, 50, 25, 10, '#52a4c5',this.router_02_functions[1])
+      buildItem(new Item($r('app.media.wodeshoucang'), '我的收藏'), 40, 50, 25, 10, '#52a4c5',this.router_02_functions[2])
+      buildItem(new Item($r('app.media.shaohouzaikan'), '稍后再看'), 40, 50, 25, 10, '#52a4c5',this.router_02_functions[3])
+    }
+    .justifyContent(FlexAlign.SpaceAround)
+    // .backgroundColor('#fefe')
+    .width('100%')
+    .height(90)
   }
-  .justifyContent(FlexAlign.SpaceAround)
-  // .backgroundColor('#fefe')
-  .width('100%')
-  .height(90)
 }
 
 @Builder function buildActivity2() {
@@ -245,7 +250,7 @@ export function buildGridItem(item: Item, column_width: number,
   .height(65)
 }
 
-@Builder function buildServe(items: Item[],f:Function[]) {
+@Builder function buildServe(items: Item[], f: Function[]) {
   Column({ space: 15 }) {
     Text('推荐服务')
       .margin({ top: 20 })
@@ -260,9 +265,9 @@ export function buildGridItem(item: Item, column_width: number,
     ) {
       ForEach(
         items,
-        (item: Item,index:number) => {
+        (item: Item, index: number) => {
           GridCol() {
-            buildGridItem(item, 80, 50, 23, 11,'#ee79a1',f[index])
+            buildGridItem(item, 80, 50, 23, 11, '#ee79a1', f[index])
           }
         }
       )
@@ -273,40 +278,52 @@ export function buildGridItem(item: Item, column_width: number,
 
 }
 
-@Builder function buildMoreServer() {
-  Column() {
-    Text('更多服务')
-      .fontWeight(FontWeight.Bold)
-      .fontSize(12)
-      .width('95%')
-      .margin({ top: 16 })
+@Component struct buildMoreServer {
+  private router_03_functions: Function[] = [
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_setting_onclick,
+  ]
+  build(){
+    Column() {
+      Text('更多服务')
+        .fontWeight(FontWeight.Bold)
+        .fontSize(12)
+        .width('95%')
+        .margin({ top: 16 })
 
-    Column({ space: 6 }) {
-      LineItem({
-        icon: $r('app.media.sch_lianxikefu'),
-        item_name: '联系客服', icon_back:
-        $r('app.media.qianwang')
-      })
+      Column({ space: 6 }) {
+        LineItem({
+          icon: $r('app.media.sch_lianxikefu'),
+          item_name: '联系客服', icon_back:
+          $r('app.media.qianwang'),
+          f:this.router_03_functions[0]
+        })
 
-      LineItem({ icon: $r('app.media.sch_tingshiping'),
-        item_name: '听视频', icon_back:
-        $r('app.media.qianwang')
-      })
+        LineItem({ icon: $r('app.media.sch_tingshiping'),
+          item_name: '听视频', icon_back:
+          $r('app.media.qianwang'),
+          f:this.router_03_functions[1]
+        })
 
-      LineItem({
-        icon: $r('app.media.sch_qingshaonianshouhu'),
-        item_name: '青少年守护',
-        icon_back: $r('app.media.qianwang')
-      })
+        LineItem({
+          icon: $r('app.media.sch_qingshaonianshouhu'),
+          item_name: '青少年守护',
+          icon_back: $r('app.media.qianwang'),
+          f:this.router_03_functions[2]
+        })
 
-      LineItem({ icon: $r('app.media.sch_shezhi'),
-        item_name: '设置', icon_back:
-        $r('app.media.qianwang')
-      })
+        LineItem({ icon: $r('app.media.sch_shezhi'),
+          item_name: '设置', icon_back:
+          $r('app.media.qianwang'),
+          f:this.router_03_functions[3]
+        })
+      }
+      .margin({ top: 6 })
     }
-    .margin({ top: 6 })
+    .width('100%')
   }
-  .width('100%')
 }
 
 
@@ -314,6 +331,7 @@ export function buildGridItem(item: Item, column_width: number,
 @Component
 struct MyAccountPage {
   @State message: string = 'Hello World'
+  private idx: number
   private serveItems: Item[] = [
     new Item($r('app.media.sch_wodekecheng'), '我的课程'),
     new Item($r('app.media.sch_mianliuliangfuwu'), '免流量服务'),
@@ -330,24 +348,25 @@ struct MyAccountPage {
     new Item($r('app.media.sch_nengliangjiayouzhan'), '能量加油站'),
     new Item($r('app.media.sch_dahuiyuanxianshiyouhui'), '大会员限时优惠'),
   ]
-
-  private router_functions:Function[]=[
-    fun.my_course_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_wallet_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
-    fun.my_space_onclick,
+  private router_functions: Function[] = [
+  fun.my_course_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_wallet_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
+  fun.my_surplus_onclick,
   ]
+
+
 
   build() {
     Column() {
@@ -401,7 +420,7 @@ struct MyAccountPage {
         }
 
         ListItem() {
-          buildServe(this.serveItems,this.router_functions)
+          buildServe(this.serveItems, this.router_functions)
         }
 
         ListItem() {
@@ -413,7 +432,7 @@ struct MyAccountPage {
       .layoutWeight(1)
 
       Blank()
-      BottomBar()
+      BottomBar({ page_index: 4 })
 
     }
     .width('100%')

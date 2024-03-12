@@ -38,7 +38,7 @@ struct DynamicPage {
       .backgroundColor('#F0F2F4')
       .layoutWeight(1)
 
-      BottomBar()
+      BottomBar({page_index:1})
 
     }
   }
