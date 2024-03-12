@@ -3,6 +3,7 @@
     "pages/Index",
     "pages/HomePage",
     "pages/DynamicPage",
-    "pages/MyAccountPage"
+    "pages/MyAccountPage",
+    "pages/VideoPage"
   ]
 }
