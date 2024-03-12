@@ -13,7 +13,6 @@ struct Express_Message {
 
   build() {
     Column(){
-
       Setting_Top({str:'播放设置'})
 
       ForEach(this.List_Message,(item:message,index)=>{
