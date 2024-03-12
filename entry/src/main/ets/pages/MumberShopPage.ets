@@ -170,6 +170,8 @@ struct MumberShopPage {
       .border({ width: 1, color: Color.Black })
       .width('100%')
 
+      
+
     }
     .border({ width: 1, color: Color.Black })
     .width('100%')
