@@ -12,13 +12,10 @@
     "pages/Express_Message",
     "pages/Play_Setting",
     "pages/UserDynamicPage",
-    "pages/Index",
-    "pages/HomePage",
-    "pages/DynamicPage",
-    "pages/MyAccountPage",
     "pages/VideoPage",
-    "pages/MemberShopPage",
     "pages/GenshinStartPage",
-    "pages/HistoryPage"
+    "pages/HistoryPage",
+    "pages/MemberShopPage",
+    "pages/CommodityDetailPage"
   ]
 }

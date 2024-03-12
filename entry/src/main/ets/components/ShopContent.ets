@@ -1,55 +1,143 @@
-class Commodity {
-  name: string
-  tagColor: string
-  tagName: string
-  tagFontColor: string
-  image: ResourceStr
-  price: number
-  countPrice: number
+import router from '@ohos.router'
+import { Commodity } from '../Class/Commodity'
 
-  constructor(name, bgColor, tagFontColor, tagName, image, price, countPrice) {
-    this.tagName = tagName
-    this.name = name
-    this.tagColor = bgColor
-    this.tagFontColor = tagFontColor
-    this.image = image
-    this.price = price
-    this.countPrice = countPrice
-  }
-}
 
 @Component
 export struct ShopContent {
   private commodities: Commodity[] = [
-    new Commodity("余量预售 FuRyuy 泡面压", "#FFF3EA", "#FF7F0D", "中野三玖榜No.3", $r('app.media.shop_content_01'), 108, 115),
-    new Commodity("余量预售 FuRyuy 泡面压", "#FFF3EA", "#FF7F0D", "中野三玖榜No.3", $r('app.media.shop_content_01'), 108, 115),
-    new Commodity("余量预售 FuRyuy 泡面压", "#FFF3EA", "#FF7F0D", "中野三玖榜No.3", $r('app.media.shop_content_01'), 108, 115),
-    new Commodity("余量预售 FuRyuy 泡面压", "#FFF3EA", "#FF7F0D", "中野三玖榜No.3", $r('app.media.shop_content_01'), 108, 115),
-    new Commodity("余量预售 FuRyuy 泡面压", "#FFF3EA", "#FF7F0D", "中野三玖榜No.3", $r('app.media.shop_content_01'), 108, 115),
-    new Commodity("余量预售 FuRyuy 泡面压", "#FFF3EA", "#FF7F0D", "中野三玖榜No.3", $r('app.media.shop_content_01'), 108, 115),
-    new Commodity("余量预售 FuRyuy 泡面压", "#FFF3EA", "#FF7F0D", "中野三玖榜No.3", $r('app.media.shop_content_01'), 108, 115),
-    new Commodity("余量预售 FuRyuy 泡面压", "#FFF3EA", "#FF7F0D", "中野三玖榜No.3", $r('app.media.shop_content_01'), 108, 115),
+    new Commodity("余量预售 FuRyuy 泡面压",
+      " [余量预售]FuRyu 泡面压 五等分的新娘 中野三玖 居家服 景品手办",
+      "中野三玖榜No.3",
+      [
+      $r('app.media.commidity01_01'),
+      $r('app.media.commidity01_02'),
+      $r('app.media.commidity01_03'),
+      $r('app.media.commidity01_04'),
+      $r('app.media.commidity01_05'),
+      $r('app.media.commidity01_06'),
+      ],
+      108, 115),
+
+     new Commodity("余量预售 FuRyuy 泡面压",
+      " [余量预售]FuRyu 泡面压 五等分的新娘 中野三玖 居家服 景品手办",
+      "中野三玖榜No.3",
+      [
+      $r('app.media.commidity01_01'),
+      $r('app.media.commidity01_02'),
+      $r('app.media.commidity01_03'),
+      $r('app.media.commidity01_04'),
+      $r('app.media.commidity01_05'),
+      $r('app.media.commidity01_06'),
+      ],
+      108, 115),
+ new Commodity("余量预售 FuRyuy 泡面压",
+      " [余量预售]FuRyu 泡面压 五等分的新娘 中野三玖 居家服 景品手办",
+      "中野三玖榜No.3",
+      [
+      $r('app.media.commidity01_01'),
+      $r('app.media.commidity01_02'),
+      $r('app.media.commidity01_03'),
+      $r('app.media.commidity01_04'),
+      $r('app.media.commidity01_05'),
+      $r('app.media.commidity01_06'),
+      ],
+      108, 115),
+ new Commodity("余量预售 FuRyuy 泡面压",
+      " [余量预售]FuRyu 泡面压 五等分的新娘 中野三玖 居家服 景品手办",
+      "中野三玖榜No.3",
+      [
+      $r('app.media.commidity01_01'),
+      $r('app.media.commidity01_02'),
+      $r('app.media.commidity01_03'),
+      $r('app.media.commidity01_04'),
+      $r('app.media.commidity01_05'),
+      $r('app.media.commidity01_06'),
+      ],
+      108, 115),
+ new Commodity("余量预售 FuRyuy 泡面压",
+      " [余量预售]FuRyu 泡面压 五等分的新娘 中野三玖 居家服 景品手办",
+      "中野三玖榜No.3",
+      [
+      $r('app.media.commidity01_01'),
+      $r('app.media.commidity01_02'),
+      $r('app.media.commidity01_03'),
+      $r('app.media.commidity01_04'),
+      $r('app.media.commidity01_05'),
+      $r('app.media.commidity01_06'),
+      ],
+      108, 115),
+ new Commodity("余量预售 FuRyuy 泡面压",
+      " [余量预售]FuRyu 泡面压 五等分的新娘 中野三玖 居家服 景品手办",
+      "中野三玖榜No.3",
+      [
+      $r('app.media.commidity01_01'),
+      $r('app.media.commidity01_02'),
+      $r('app.media.commidity01_03'),
+      $r('app.media.commidity01_04'),
+      $r('app.media.commidity01_05'),
+      $r('app.media.commidity01_06'),
+      ],
+      108, 115),
+ new Commodity("余量预售 FuRyuy 泡面压",
+      " [余量预售]FuRyu 泡面压 五等分的新娘 中野三玖 居家服 景品手办",
+      "中野三玖榜No.3",
+      [
+      $r('app.media.commidity01_01'),
+      $r('app.media.commidity01_02'),
+      $r('app.media.commidity01_03'),
+      $r('app.media.commidity01_04'),
+      $r('app.media.commidity01_05'),
+      $r('app.media.commidity01_06'),
+      ],
+      108, 115),
+ new Commodity("余量预售 FuRyuy 泡面压",
+      " [余量预售]FuRyu 泡面压 五等分的新娘 中野三玖 居家服 景品手办",
+      "中野三玖榜No.3",
+      [
+      $r('app.media.commidity01_01'),
+      $r('app.media.commidity01_02'),
+      $r('app.media.commidity01_03'),
+      $r('app.media.commidity01_04'),
+      $r('app.media.commidity01_05'),
+      $r('app.media.commidity01_06'),
+      ],
+      108, 115),
+ new Commodity("余量预售 FuRyuy 泡面压",
+      " [余量预售]FuRyu 泡面压 五等分的新娘 中野三玖 居家服 景品手办",
+      "中野三玖榜No.3",
+      [
+      $r('app.media.commidity01_01'),
+      $r('app.media.commidity01_02'),
+      $r('app.media.commidity01_03'),
+      $r('app.media.commidity01_04'),
+      $r('app.media.commidity01_05'),
+      $r('app.media.commidity01_06'),
+      ],
+      108, 115),
+
+
+
   ]
 
   build() {
     Row() {
       List() {
-        ForEach(this.commodities, (item: Commodity) => {
+        ForEach(this.commodities, (item: Commodity, index) => {
           ListItem() {
             Column() {
-              Image(item.image)
+              Image(item.images[5])
                 .width(160)
 
               Column({ space: 5 }) {
                 Text(item.name)
                   .fontSize(12)
-                  // .border({ width: 1, color: Color.Black })
+                    // .border({ width: 1, color: Color.Black })
                   .width('100%')
                 Row() {
                   Text(item.tagName)
                     .fontSize(10)
-                    .fontColor(item.tagFontColor)
-                    .backgroundColor(item.tagColor)
+                    .fontColor('#FF7F0D')
+                    .backgroundColor('#FFF3EA')
                 }
                 .width('100%')
 
@@ -70,6 +158,15 @@ export struct ShopContent {
               .padding({ left: 10 })
               .width('100%')
             }
+            .onClick(() => {
+              router.pushUrl(
+                { url: "pages/CommodityDetailPage", params: { commodity: item } },
+                router.RouterMode.Single,
+                (err) => {
+                  console.log(err.message)
+                }
+              )
+            })
             .padding({ bottom: 10 })
             .backgroundColor(Color.White)
             .margin({ bottom: 10 })
