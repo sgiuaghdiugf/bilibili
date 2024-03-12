@@ -1,7 +1,7 @@
 import { message } from './Setting'
 import { Setting_Top } from './Setting_Top'
 
-const FONT_COLOR:string='#999da0'
+export  const FONT_COLOR:string='#999da0'
 
 
 @Entry
