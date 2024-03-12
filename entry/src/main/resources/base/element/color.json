@@ -3,6 +3,10 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "pink",
+      "value": "#FF5B9A"
     }
   ]
 }

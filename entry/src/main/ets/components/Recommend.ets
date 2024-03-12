@@ -1,4 +1,4 @@
-import {video} from '../videomodel/VideoInfo'
+
 class MyDataSource implements IDataSource {
   private list: number[] = []
   private listener: DataChangeListener
@@ -32,6 +32,27 @@ class SwiperInfo{
     this.title = title
   }
 }
+
+class video{
+  img: ResourceStr
+  play: string
+  barrage: string
+  title: string
+  up: string
+  long: string
+  time: string
+
+  constructor(img, play, barrage, title, up, long, time) {
+    this.img = img
+    this.play = play
+    this.barrage = barrage
+    this.title = title
+    this.up = up
+    this.long = long
+    this.time = time
+  }
+}
+
 
 @Builder function SwiperModule(){
   Swiper(this.swiperController) {

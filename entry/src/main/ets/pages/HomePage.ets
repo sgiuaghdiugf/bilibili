@@ -1,8 +1,7 @@
-
-import { Recommend } from '../components/Recommend'
 import {BottomBar} from '../components/BottomBar'
 import { HotPage } from '../components/HotPage'
 import { LivePage } from '../components/LivePage'
+import { Recommend } from '../components/Recommend'
 
 
 
@@ -77,13 +76,13 @@ struct HomePage {
     Column() {
       Top()
 
-      if(this.ids === 1){
+      if (this.ids === 1) {
         Recommend()
-      }else if(this.ids === 2){
+      } else if (this.ids === 2) {
         HotPage()
-      }else if(this.ids === 0){
+      } else if (this.ids === 0) {
         LivePage()
-      }else{
+      } else {
         Recommend()
       }
 
@@ -94,3 +93,4 @@ struct HomePage {
     .height('100%')
   }
 }
+

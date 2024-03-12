@@ -1,9 +1,22 @@
 {
   "src": [
+    "pages/Rank",
+    "pages/HomePage",
+    "pages/DynamicPage",
+    "pages/MyAccountPage",
+    "pages/Setting",
+    "pages/Index",
+    "pages/MyWalletPage",
+    "pages/ShowImagePage",
+    "pages/Account_Data",
+    "pages/Express_Message",
+    "pages/Play_Setting",
+    "pages/UserDynamicPage",
     "pages/Index",
     "pages/HomePage",
     "pages/DynamicPage",
     "pages/MyAccountPage",
-    "pages/VideoPage"
+    "pages/VideoPage",
+    "pages/MemberShopPage"
   ]
 }
