@@ -11,9 +11,6 @@ export  class message{
   }
 }
 
-function test(){
-  console.log('123')
-}
 
 @Entry
 @Component

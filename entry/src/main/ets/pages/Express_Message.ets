@@ -11,7 +11,7 @@ struct Express_Message {
 
   build() {
     Column(){
-      Setting_Top({str:'收货信息',url:'pages/Setting'})
+      Setting_Top({str:'收货信息'})
 
       ForEach(this.List_Message,(item:message,index)=>{
         Column() {
