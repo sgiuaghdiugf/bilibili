@@ -107,7 +107,7 @@ struct BottomSon {
 }
 
 @Builder function buildAdd(): void {
-  Row () {
+  Row() {
     Image($r('app.media.jiahao_2'))
       .width(15)
       .height(15)
@@ -132,7 +132,7 @@ export struct BottomBar {
     new Item($r('app.media.sch_wode'), '我的'),
   ]
   private Page: string[] = [
-    'pages/HomePage', 'pages/DynamicPage', 'pages/DynamicPage', 'pages/DynamicPage', 'pages/MyAccountPage'
+    'pages/HomePage', 'pages/DynamicPage', 'pages/DynamicPage', 'pages/MemberShopPage', 'pages/MyAccountPage'
   ]
 
   build() {
