@@ -1,7 +1,7 @@
 import { message } from './Setting'
 import { Setting_Top } from './Setting_Top'
 
-const FONT_COLOR:string='#999da0'
+export  const FONT_COLOR:string='#999da0'
 
 
 @Entry
@@ -24,7 +24,7 @@ struct Account_Data {
 
   build() {
     Column(){
-      Setting_Top({str:'账号资料',url:'pages/Setting'})
+      Setting_Top({str:'账号资料'})
       ForEach(this.List_Message,(item:message,index)=>{
           Column(){
             if(index==0||index==6||index==7||index==9){

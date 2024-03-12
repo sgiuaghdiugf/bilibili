@@ -65,7 +65,7 @@ export function my_history_onclick() {
 export function my_surplus_onclick() {
   router.pushUrl(
     {
-      url: 'pages/MyWalletPage'
+      url: 'pages/Rank'
     },
     router.RouterMode.Single,
     err => {

@@ -2,7 +2,6 @@ import router from '@ohos.router'
 @Component
 export struct Setting_Top{
   str:string
-  url:string
   build(){
     Column(){
       Row(){
@@ -10,9 +9,7 @@ export struct Setting_Top{
           .height(20)
           .margin({left:20})
           .onClick(()=>{
-            router.pushUrl({
-              url:this.url
-            })
+            router.back()
           })
         Text(this.str)
           .margin({left: 20})

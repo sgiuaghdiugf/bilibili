@@ -11,9 +11,6 @@ export  class message{
   }
 }
 
-function test(){
-  console.log('123')
-}
 
 @Entry
 @Component
@@ -137,7 +134,7 @@ struct Setting {
       .onClick(()=>{
         if (m.title=='账号资料'||m.title=='收货信息'||m.title=='播放设置') {
           router.pushUrl({
-            url: 'pages/Account_Data'
+            url: m.title=='账号资料' ? 'pages/Account_Data':(m.title=='收货信息' ? 'pages/Express_Message':'pages/Play_Setting')
           })
         }
       })

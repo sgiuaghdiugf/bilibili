@@ -78,8 +78,13 @@ export struct DynamicUserList {
       .padding(10)
       .margin({ bottom: 10 })
 
-      List({ space: 20 }) {
-        ForEach(this.persons, (person: Person) => {
+      List({ space: 15 }) {
+        ListItem() {
+          Column() {
+          }
+        }
+
+        ForEach(this.persons, (person: Person, index) => {
           ListItem() {
             Column() {
               Stack() {
