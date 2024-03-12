@@ -59,7 +59,7 @@ class SwiperInfo{
   .duration(1000)
   .itemSpace(0)
   .curve(Curve.Linear)
-  .margin(3)
+  .margin({left: 3, right: 3, bottom: 3})
   .itemSpace(10)
   .indicatorStyle({right: 10, size: 12, color: '#8a8182', selectedColor: Color.White})
 
