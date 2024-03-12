@@ -24,7 +24,7 @@ struct Account_Data {
 
   build() {
     Column(){
-      Setting_Top({str:'账号资料',url:'pages/Setting'})
+      Setting_Top({str:'账号资料'})
       ForEach(this.List_Message,(item:message,index)=>{
           Column(){
             if(index==0||index==6||index==7||index==9){
