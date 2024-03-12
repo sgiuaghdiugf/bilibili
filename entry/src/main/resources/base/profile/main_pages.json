@@ -12,6 +12,11 @@
     "pages/Express_Message",
     "pages/Play_Setting",
     "pages/UserDynamicPage",
-    "pages/MumberShopPage"
+    "pages/MumberShopPage",
+    "pages/Index",
+    "pages/HomePage",
+    "pages/DynamicPage",
+    "pages/MyAccountPage",
+    "pages/VideoPage"
   ]
 }
