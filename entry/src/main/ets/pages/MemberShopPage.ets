@@ -100,7 +100,7 @@ struct MumberShopPage {
               .width(20)
           }
           .height(30)
-          // .border({ width: 0.5, color: $r('app.color.pink') })
+          .border({ width: 0.5, color: $r('app.color.pink') })
           .borderRadius(20)
           .padding({ left: 10, right: 10 })
           .width('70%')
