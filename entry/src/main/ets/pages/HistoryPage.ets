@@ -1,8 +1,12 @@
+import router from '@ohos.router'
 import { VideoCover } from '../components/VideoCover'
 @Builder function Top(){
   Row(){
     Row(){
       Image($r('app.media.history_back'))
+        .onClick(()=>{
+          router.back()
+        })
         .width(16)
         .margin({right: 20})
       Text('历史记录')

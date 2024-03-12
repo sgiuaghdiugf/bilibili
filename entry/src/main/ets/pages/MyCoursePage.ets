@@ -30,7 +30,7 @@ struct MyCoursePage {
         }
 
       }
-      .layoutWeight(1)
+      .layoutWeight(1.1)
 
 
 
@@ -105,7 +105,9 @@ struct Head_02{
           Text('分类')
             .fontSize(10)
         }
+        .margin({right:10})
       }
+      .justifyContent(FlexAlign.SpaceEvenly)
       .width('100%')
       .height(40)
       .margin({bottom:10})
@@ -118,6 +120,7 @@ struct Head_02{
           }
         )
       }
+      .justifyContent(FlexAlign.SpaceEvenly)
       .width('100%')
 
     }

@@ -53,7 +53,7 @@ export function my_setting_onclick(){
 export function my_history_onclick() {
   router.pushUrl(
     {
-      url: 'pages/MyWalletPage'
+      url: 'pages/HistoryPage'
     },
     router.RouterMode.Single,
     err => {

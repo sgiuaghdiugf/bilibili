@@ -148,8 +148,9 @@ export struct Recommend {
       .width('100%')
       .layoutWeight(1)
       .margin({left: 5})
-      .lanes({maxLength: 175, minLength: 175})
+      .lanes({maxLength: '31%', minLength: '31%'})
     }
+    .width('100%')
     .height('100%')
   }
 }
