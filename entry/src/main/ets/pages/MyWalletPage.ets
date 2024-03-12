@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import {MyWalletPageHead,MyWalletElement,
   MyWalletElement2,MyWalletElement3,MyWalletElement4} from '../components/MyWalletComponents'
+=======
+import { MyWalletPageHead } from '../components/BottomBar'
+>>>>>>> jackson
 
 @Entry
 @Component
@@ -7,6 +11,7 @@ struct MyWalletPage {
   @State message: string = 'Hello World'
 
   build() {
+<<<<<<< HEAD
    Column({space:5}){
      /*页面标题部分*/
     MyWalletPageHead(
@@ -33,5 +38,10 @@ struct MyWalletPage {
    .backgroundColor('#f6f7f9')
     .width('100%')
     .height('100%')
+=======
+    Column() {
+      MyWalletPageHead()
+    }
+>>>>>>> jackson
   }
 }

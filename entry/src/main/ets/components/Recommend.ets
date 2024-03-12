@@ -1,3 +1,4 @@
+
 class MyDataSource implements IDataSource {
   private list: number[] = []
   private listener: DataChangeListener
@@ -175,6 +176,7 @@ export struct Recommend {
       .layoutWeight(1)
       .margin({left: 5})
       .lanes({maxLength: 175, minLength: 175})
+      // .lanes(2)
     }
   }
 }
