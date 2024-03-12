@@ -71,7 +71,7 @@ function buildBottomItem(item: Item, column_width: number,
 @Component
 struct BottomSon {
   item: Item;
-  color:string;
+  color: string;
   idx: number;
   page_url: string;
   icon_width: number;
@@ -105,8 +105,9 @@ struct BottomSon {
     .height(45)
   }
 }
-@Builder function buildAdd():void{
-  Column() {
+
+@Builder function buildAdd(): void {
+  Row() {
     Image($r('app.media.jiahao_2'))
       .width(15)
       .height(15)
@@ -117,6 +118,7 @@ struct BottomSon {
   .borderRadius(15)
   .backgroundColor('#ee443c')
 }
+
 @Entry
 @Component
 export struct BottomBar {
@@ -129,26 +131,25 @@ export struct BottomBar {
     new Item($r('app.media.sch_huiyuangou'), '会员购'),
     new Item($r('app.media.sch_wode'), '我的'),
   ]
-  private Page: string[]= [
-    'pages/HomePage','pages/DynamicPage','pages/DynamicPage','pages/DynamicPage','pages/MyAccountPage'
+  private Page: string[] = [
+    'pages/HomePage', 'pages/DynamicPage', 'pages/DynamicPage', 'pages/MemberShopPage', 'pages/MyAccountPage'
   ]
-
 
   build() {
     Row() {
       ForEach(
         this.items,
-        (item:Item,index:number) => {
-          if(index == this.page_index){
+        (item: Item, index: number) => {
+          if (index == this.page_index) {
             BottomSon({
-              item:item,
+              item: item,
               icon_width: 25,
               color: '#c14537',
               page_url: this.Page[index]
             })
-          }else if(index == 2){
+          } else if (index == 2) {
             buildAdd()
-          }else{
+          } else {
             BottomSon({
               item: this.items[index],
               icon_width: 22,
@@ -178,7 +179,8 @@ export struct LineItem {
   icon: Resource;
   item_name: string;
   icon_back: Resource;
-  f:Function;
+  f: Function;
+
   build() {
     Row() {
       Image(this.icon)
@@ -194,7 +196,7 @@ export struct LineItem {
       Image(this.icon_back)
         .width(16)
         .margin({ right: 10 })
-        .onClick(()=>{
+        .onClick(() => {
           this.f()
         })
     }
