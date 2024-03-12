@@ -168,10 +168,10 @@ struct MumberShopPage {
       .layoutWeight(1)
       .padding({ left: 10, right: 10, top: 10 })
 
-      BottomBar()
+      BottomBar(({page_index:2}))
 
     }
-    .width('100%')
+    // .width('100%')
     // .backgroundColor(Color.Red)
 
   }
