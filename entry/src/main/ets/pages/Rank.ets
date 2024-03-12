@@ -67,7 +67,6 @@ struct Index {
     Column() {
       Row(){
         Rank_Top()
-        // Image()
       }
 
       Column(){
@@ -86,45 +85,42 @@ struct Index {
         if(this.index==0){
           Button('日漫榜')
             .sure()
-            .margin({left:30})
+            .margin({left:'22%'})
             .fontColor(FONT_COLOR_CHOSE)
             .backgroundColor('#fef2f6')
         }else{
             Button('日漫榜')
               .sure()
-              .margin({left:30})
+              .margin({left:'22%'})
               .onClick(()=>{
-                console.log('0');
                 this.index=0
               })
         }
         if(this.index==1){
           Button('国漫榜')
             .sure()
-            .margin({left:30})
+            .margin({left:'4%'})
             .fontColor(FONT_COLOR_CHOSE)
             .backgroundColor('#fef2f6')
         }else{
             Button('国漫榜')
               .sure()
-              .margin({left:30})
+              .margin({left:'4%'})
               .onClick(()=>{
-                console.log('1');
                 this.index=1
               })
           }
           if(this.index==2){
             Button('免费榜')
               .sure()
-              .margin({left:30})
+              .margin({left:'4%'})
               .fontColor(FONT_COLOR_CHOSE)
               .backgroundColor('#fef2f6')
           }else{
               Button('免费榜')
                 .sure()
-                .margin({left:30})
+                .margin({left:'4%'})
                 .onClick(()=>{
-                  console.log('2')
                   this.index=2
                 })
             }
@@ -136,30 +132,30 @@ struct Index {
     ForEach((this.index==0 ? this.Janime : (this.index==1 ? this.Canime : this.Fanime)),(item:work,index)=>{
       ListItem(){
         Row(){
-          if(index<3){
-            Column(){
-              Image(this.rankNumber[index])
-                .width(40)
-                .margin({left:5,right:-7})
+            if(index<3){
+              Column(){
+                Image(this.rankNumber[index])
+                  .width("10%")
+                  .margin({left:5,right:-7})
+              }
+              .justifyContent(FlexAlign.Start)
+              .height('100%')
             }
-            .justifyContent(FlexAlign.Start)
-            .height('100%')
-          }
-          else {
-            Column(){
-              Image(this.rankNumber[6])
-                .width(20)
-                .margin({left:5,right:-5})
-            }.justifyContent(FlexAlign.Start)
-            .height('100%')
-            Column(){
-              Image(this.rankNumber[index])
-                .width(20)
-                .margin({left:5})
+            else {
+              Column(){
+                Image(this.rankNumber[6])
+                  .width("4%")
+                  .margin({left:5,right:-5})
+              }.justifyContent(FlexAlign.Start)
+              .height('100%')
+              Column(){
+                Image(this.rankNumber[index])
+                  .width("4%")
+                  .margin({left:5})
+              }
+              .justifyContent(FlexAlign.Start)
+              .height('100%')
             }
-            .justifyContent(FlexAlign.Start)
-            .height('100%')
-          }
 
           Column(){
               Image(item.img)
@@ -167,6 +163,7 @@ struct Index {
                 .margin({top:5})
             }
           .height('100%')
+          .width('30%')
 
           Column(){
             Row(){
@@ -204,19 +201,20 @@ struct Index {
           .justifyContent(FlexAlign.SpaceBetween)
           .alignItems(HorizontalAlign.Start)
           .height('100%')
-          .width(200)
+          .width('58%')
           .margin({left:5})
           .padding({right:20})
 
 
         }
         .height(170)
-        .width(340)
+        .width('100%')
       }
     })
   }
   .scrollBar(BarState.Auto)
   .edgeEffect(EdgeEffect.Spring)
+  .width('100%')
 }
 
 }

@@ -1,7 +1,14 @@
+import router from '@ohos.router'
 @Entry
 @Component
 struct Index {
   @State message: string = 'Hello World'
+
+  aboutToAppear(){
+    router.replaceUrl({
+      url:'pages/HomePage'
+    })
+  }
 
   build() {
     Row() {

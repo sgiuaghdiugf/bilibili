@@ -1,4 +1,5 @@
 //对一些固定属性做设置
+import router from '@ohos.router';
 export  const FONT_COLOR_UNCHOSE:string ='#5e6265';
 export const FONT_COLOR_CHOSE:string ='#fc8bab';
 
@@ -12,8 +13,11 @@ export struct Rank_Top{
         //返回箭头图片
          Column(){
            Image($r('app.media.back'))
-             .width(20)
-             .margin({top:23,left:20})
+             .width(17)
+             .margin({top:'6%',left:'7%'})
+             .onClick(()=>{
+               router.back()
+             })
          }
          .height('100%')
 
@@ -30,7 +34,7 @@ export struct Rank_Top{
 
            }
          }
-         .margin({left:45})
+         .margin({left:'11.5%'})
          .padding({left:15, right:15})
          .height('100%')
          .justifyContent(FlexAlign.SpaceBetween)
