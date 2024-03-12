@@ -1,5 +1,6 @@
 
-import { Recommend } from '../components/Recommend'
+import {Recommend} from '../components/Recommend'
+
 import {BottomBar} from '../components/BottomBar'
 
 @Entry
@@ -7,6 +8,7 @@ import {BottomBar} from '../components/BottomBar'
 struct HomePage {
   titles: string[] = ['直播', '推荐', '热门', '追番', '影视', '游戏']
   @State ids: number = 1
+
 
 
 
@@ -74,10 +76,11 @@ struct HomePage {
       Recommend()
         .layoutWeight(1)
 
-      BottomBar({page_index:0})
+      BottomBar()
     }
     .width('100%')
     .height('100%')
     .backgroundColor('#eeeeee')
   }
+
 }
