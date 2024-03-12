@@ -231,7 +231,7 @@ export struct my_course_Tabs_01 {
       .onChange((index: number) => {
         this.currentIndex = index
       })
-      .width(360)
+      .width('100%')    //
       .height('100%')
       .margin({ top: 0 })
       .backgroundColor('#ffffff')
@@ -292,11 +292,11 @@ export struct my_course_Tabs_02 {
         }.tabBar(this.TabBuilder(0, 'IT互联网'))
 
         TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#007DFF')
+          show_videos()
         }.tabBar(this.TabBuilder(1, '考试考证'))
 
         TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+          Recommend()
         }.tabBar(this.TabBuilder(2, '通识科普'))
 
         TabContent() {
@@ -317,13 +317,13 @@ export struct my_course_Tabs_02 {
       }
       .vertical(false)
       .barMode(BarMode.Scrollable)
-      .barWidth(360)
+      .barWidth('98%')
       .barHeight(50)
       .animationDuration(300)
       .onChange((index: number) => {
         this.currentIndex = index
       })
-      .width(360)
+      .width('99%')
       .height('100%')
       .backgroundColor('#ffffff')
     }
