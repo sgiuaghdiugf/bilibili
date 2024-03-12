@@ -12,6 +12,7 @@
     "pages/Express_Message",
     "pages/Play_Setting",
     "pages/UserDynamicPage",
-    "pages/MemberShopPage"
+    "pages/MemberShopPage",
+    "pages/CommodityDetailPage"
   ]
 }
