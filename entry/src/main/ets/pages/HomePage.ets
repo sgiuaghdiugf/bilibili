@@ -1,5 +1,6 @@
 
-import { Recommend } from '../components/Recommend'
+import {Recommend} from '../components/Recommend'
+
 import {BottomBar} from '../components/BottomBar'
 
 @Entry
@@ -81,4 +82,5 @@ struct HomePage {
     .height('100%')
     .backgroundColor('#eeeeee')
   }
+
 }
