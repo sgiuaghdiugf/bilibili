@@ -1,3 +1,7 @@
+import router from '@ohos.router'
+import { VideoCover } from '../components/VideoCover'
+import { video } from '../videomodel/VideoInfo'
+import { videoObjects } from '../videomodel/VideoObject'
 @Extend(Text) function textGrayMargin(){
   .fontSize(12)
   .fontColor('#b7b9be')
@@ -7,23 +11,24 @@
 @Entry
 @Component
 struct VideoPage {
-
-  // @State videoSrc: Resource = $rawfile()
-  videoSrc: Resource
-  @State previewUri: Resource = $r('app.media.living_item_12')
+  @State index: number = router.getParams()['id']
+  @State videoObject: video = videoObjects[this.index]
+  @State videoSrc: Resource = $rawfile('原神启动.mp4')
+  @State previewUri: Resource = $r(`app.media.video_${this.videoObject.id}`)
   @State curRate: PlaybackSpeed = PlaybackSpeed.Speed_Forward_1_00_X
   @State isAutoPlay: boolean = false
   @State showControls: boolean = true
   controller: VideoController = new VideoController()
 
+
   icons: ResourceStr[] = [
-    $r('app.media.video_like'),
-    $r('app.media.video_dislike'),
-    $r('app.media.video_coin'),
-    $r('app.media.video_collection'),
-    $r('app.media.video_forward')
+  $r('app.media.video_like'),
+  $r('app.media.video_dislike'),
+  $r('app.media.video_coin'),
+  $r('app.media.video_collection'),
+  $r('app.media.video_forward')
   ]
-  count: string[] = ["1739", "不喜欢", "328", "201", "17"]
+  count: string[] = [this.videoObject.like.toString(), "不喜欢", this.videoObject.coinCount.toString(), this.videoObject.collectCount.toString(), this.videoObject.forwardCount.toString()]
 
   build() {
 
@@ -33,7 +38,7 @@ struct VideoPage {
         previewUri: this.previewUri,
         currentProgressRate: this.curRate,
         controller: this.controller
-      }).width('100%').height(210)
+      }).width('100%').height(240)
         .autoPlay(this.isAutoPlay)
         .controls(this.showControls)
 
@@ -53,7 +58,7 @@ struct VideoPage {
           }
 
 
-          Text('评论 79')
+          Text(`评论 ${this.videoObject.comment}`)
             .fontSize(12)
             .fontColor('#8b8b8b')
         }
@@ -91,136 +96,164 @@ struct VideoPage {
         .color('#f7f8f9')
         .strokeWidth(1)
 
-      Column(){
-        Row(){
-          Row(){
-            Stack(){
-              Image($r('app.media.natsume1'))
-                .width(36)
-                .border({radius: 18})
-                .margin({bottom: 5})
-              Image($r('app.media.live_charge'))
-                .width(15)
-                .position({x: 26, y: 26})
-            }
-            .margin({right: 10})
-            Column(){
-              Text('花丸晴琉Official')
-              .fontSize(14)
-              .fontColor('#fe7ba7')
-              .margin({bottom: 5})
+      List(){
+        ListItem(){
+          Column(){
+            Row(){
               Row(){
-                Text('46.4万粉丝')
-                  .fontSize(12)
-                  .fontColor('#a9adb3')
-                  .margin({right: 5})
-                Text('637视频')
-                  .fontSize(12)
-                  .fontColor('#a9adb3')
+                Stack(){
+                  Image(this.videoObject.avatar)
+                    .width(36)
+                    .border({radius: 18})
+                    .margin({bottom: 5})
+                  Image($r('app.media.live_charge'))
+                    .width(15)
+                    .position({x: 26, y: 26})
+                }
+                .margin({right: 10})
+                Column(){
+                  Text(this.videoObject.up)
+                    .fontSize(14)
+                    .fontColor('#fe7ba7')
+                    .margin({bottom: 5})
+                  Row(){
+                    Text(`${this.videoObject.fansCount}粉丝`)
+                      .fontSize(12)
+                      .fontColor('#a9adb3')
+                      .margin({right: 5})
+                    Text(`${this.videoObject.videoCount}视频`)
+                      .fontSize(12)
+                      .fontColor('#a9adb3')
+                  }
+                }
+                .alignItems(HorizontalAlign.Start)
+              }
+
+              Row(){
+                Row(){
+                  Image($r('app.media.video_lighting'))
+                    .width(15)
+                    .margin({right: 5})
+                  Text('充电')
+                    .fontSize(14)
+                    .fontColor('#fe9fbf')
+                }
+                .padding({top: 3, bottom: 3, left: 15, right: 15})
+                .border({radius: 20, style: BorderStyle.Solid, width: 2, color: '#fe9fbf'})
+                .margin({right: 5})
+
+                Row(){
+                  Image($r('app.media.video_focus'))
+                    .width(15)
+                    .margin({right: 5})
+                  Text('已关注')
+                    .fontSize(14)
+                    .fontColor('#989ca2')
+
+                }
+                .padding({top: 3, bottom: 3, left: 10, right: 10})
+                .border({radius: 20})
+                .backgroundColor('#e4e5e7')
               }
             }
-            .alignItems(HorizontalAlign.Start)
-          }
+            .width('100%')
+            .padding({top: 10, bottom: 10, left: 10, right: 10})
+            .justifyContent(FlexAlign.SpaceBetween)
 
-          Row(){
             Row(){
-              Image($r('app.media.video_lighting'))
+              Row(){
+                Row(){
+                  Text('活动').fontSize(12)
+                    .fontColor('#fe7ba7')
+                }
+                .padding(5)
+                .backgroundColor('#f6f7f9')
+                .border({radius: 12})
+
+                Text(this.videoObject.title)
+                  .fontSize(16)
+                  .fontWeight(FontWeight.Medium)
+                  .maxLines(1)
+                  .textOverflow({overflow: TextOverflow.Ellipsis})
+              }
+              .width('80%')
+              Image($r('app.media.video_bottom_arrow'))
                 .width(15)
-                .margin({right: 5})
-              Text('充电')
-                .fontSize(14)
-                .fontColor('#fe9fbf')
             }
-            .padding({top: 3, bottom: 3, left: 15, right: 15})
-            .border({radius: 20, style: BorderStyle.Solid, width: 2, color: '#fe9fbf'})
-            .margin({right: 5})
+            .width('100%')
+            .padding({bottom: 5, left: 10, right: 10})
+            .justifyContent(FlexAlign.SpaceBetween)
 
             Row(){
-              Image($r('app.media.video_focus'))
-                .width(15)
+              Image($r('app.media.video_play_gray'))
+                .width(18)
+                .margin({right: 3})
+              Text(this.videoObject.play)
+                .textGrayMargin()
+              Image($r('app.media.video_barrage_gray'))
+                .width(18)
+                .margin({right: 3})
+              Text(this.videoObject.barrage)
+                .textGrayMargin()
+              Text(this.videoObject.time)
+                .textGrayMargin()
+              Image($r('app.media.video_person'))
+                .width(18)
                 .margin({right: 5})
-              Text('已关注')
-                .fontSize(14)
-                .fontColor('#989ca2')
-
+              Text(`${this.videoObject.nowLook}人正在看`)
+                .textGrayMargin()
             }
-            .padding({top: 3, bottom: 3, left: 10, right: 10})
-            .border({radius: 20})
-            .backgroundColor('#e4e5e7')
-          }
-        }
-        .width('100%')
-        .padding({top: 10, bottom: 10, left: 10, right: 10})
-        .justifyContent(FlexAlign.SpaceBetween)
+            .width('100%')
+            .margin({left: 20})
 
-        Row(){
-          Row(){
             Row(){
-              Text('活动').fontSize(12)
-                .fontColor('#fe7ba7')
+              ForEach(this.icons, (icon: ResourceStr, index) => {
+                Column(){
+                  Image(icon)
+                    .width(30)
+                    .margin({bottom: 5})
+                  Text(this.count[index])
+                    .fontSize(12)
+                    .fontColor('#b6babe')
+                }
+              })
             }
-            .padding(5)
-            .backgroundColor('#f6f7f9')
-            .border({radius: 12})
+            .width('100%')
+            .height(80)
+            .justifyContent(FlexAlign.SpaceAround)
+            .alignItems(VerticalAlign.Center)
 
-            Text('花丸！我耳朵好痒！【花丸晴琉】')
-              .fontSize(16)
-              .fontWeight(FontWeight.Medium)
+            Row(){
+              Row(){
+                Image($r('app.media.video_tv'))
+                  .width(15)
+                  .margin({right: 8})
+                Text("B站动画种草大赛")
+                  .fontSize(14)
+                  .margin({right: 5})
+                Image($r('app.media.right_arrow'))
+                  .width(10)
+                  .margin({right: 5})
+              }
+              .padding(3)
+              .backgroundColor('#f6f7f9')
+              .border({radius: 20})
+              .margin({left: 16})
+            }
+            .width('100%')
+            .justifyContent(FlexAlign.Start)
+            .margin({bottom: 12})
+
+            Divider()
+              .color('#ebebed')
+              .strokeWidth(1)
+
+            VideoCover({playingId: this.videoObject.id})
           }
-          Image($r('app.media.video_bottom_arrow'))
-            .width(15)
         }
-        .width('100%')
-        .padding({bottom: 5, left: 10, right: 10})
-        .justifyContent(FlexAlign.SpaceBetween)
-
-        Row(){
-          Image($r('app.media.video_play_gray'))
-            .width(18)
-            .margin({right: 3})
-          Text("6739")
-            .textGrayMargin()
-          Image($r('app.media.video_barrage_gray'))
-            .width(18)
-            .margin({right: 3})
-          Text('15')
-            .textGrayMargin()
-          Text('2024年3月10日')
-            .textGrayMargin()
-          Text('12:15')
-            .textGrayMargin()
-          Image($r('app.media.video_person'))
-            .width(18)
-            .margin({right: 5})
-          Text('1人正在看')
-            .textGrayMargin()
-        }
-        .width('100%')
-        .margin({left: 20})
-
-        Row(){
-          ForEach(this.icons, (icon: ResourceStr, index) => {
-            Column(){
-              Image(icon)
-                .width(30)
-                .margin({bottom: 5})
-              Text(this.count[index])
-                .fontSize(12)
-                .fontColor('#b6babe')
-            }
-          })
-        }
-        .width('100%')
-        .height(80)
-        .justifyContent(FlexAlign.SpaceAround)
-        .alignItems(VerticalAlign.Center)
-
-        Row(){
-
-          Text("B站动画种草大赛")
-        }
-        .width('100%')
       }
+      .layoutWeight(1)
+
 
 
     }

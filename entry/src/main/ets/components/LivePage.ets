@@ -198,7 +198,7 @@ class Living{
                   .fontSize(12)
                   .fontColor(Color.White)
               }
-              .position({x: 0, y: 75})
+              .position({x: 0, y: '14%'})
               .width('100%')
               .justifyContent(FlexAlign.SpaceBetween)
               .padding({left: 5, right: 5, top: 3, bottom: 3})
@@ -242,7 +242,7 @@ class Living{
     }
     .width('100%')
     .margin({left: 5})
-    .lanes({maxLength: 175, minLength: 175})
+    .lanes({maxLength: '31%', minLength: '31%'})
   }
   .backgroundColor('#f1f2f4')
 }
