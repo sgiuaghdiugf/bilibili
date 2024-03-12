@@ -6,8 +6,8 @@ struct Index {
 
   aboutToAppear(){
     router.replaceUrl({
-      url:'pages/HomePage'
-    })
+      url: 'pages/GenshinStartPage'
+    }, router.RouterMode.Single)
   }
 
   build() {

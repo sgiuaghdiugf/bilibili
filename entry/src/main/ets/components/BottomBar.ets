@@ -1,4 +1,4 @@
-import font from '@ohos.font';
+
 import router from '@ohos.router';
 // import {bottom_onclick} from '../sch_functions/click_function'
 export class Item {
@@ -118,6 +118,7 @@ struct BottomSon {
   .borderRadius(15)
   .backgroundColor('#ee443c')
 }
+
 
 @Entry
 @Component

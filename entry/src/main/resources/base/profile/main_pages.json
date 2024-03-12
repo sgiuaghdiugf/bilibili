@@ -9,15 +9,22 @@
     "pages/MyWalletPage",
     "pages/ShowImagePage",
     "pages/Account_Data",
+
+    "pages/UserDynamicPage",
+    "pages/MySpacePage",
+    "pages/MyCoursePage",
     "pages/Express_Message",
     "pages/Play_Setting",
     "pages/UserDynamicPage",
-    "pages/Index",
-    "pages/HomePage",
-    "pages/DynamicPage",
-    "pages/MyAccountPage",
     "pages/VideoPage",
+<<<<<<< HEAD
     "pages/MemberShopPage",
     "pages/Saving"
+=======
+    "pages/GenshinStartPage",
+    "pages/HistoryPage",
+    "pages/MemberShopPage",
+    "pages/CommodityDetailPage"
+>>>>>>> 03eff7f156cc64eaa478473ce3a26d1200be399f
   ]
 }

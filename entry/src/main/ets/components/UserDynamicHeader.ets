@@ -89,133 +89,141 @@ export struct UserDynamicHeader {
 
       }
 
-      Row() {
-        Column() {
-          Row() {
-            Column() {
-              Text("858.6万")
-                .fontSize(16)
-              Text("粉丝")
-                .fontSize(14)
-                .fontColor('#ABB0B5')
-                .margin({ top: 2 })
-            }
-
-            Image($r('app.media.space_divider_vertical'))
-              .width(20)
-
-            Column() {
-
-              Text("120")
-                .fontSize(16)
-
-              Text("关注")
-                .fontSize(14)
-                .fontColor('#ABB0B5')
-                .margin({ top: 2 })
-            }
-
-            Image($r('app.media.space_divider_vertical'))
-              .width(20)
-
-            Column() {
-              Text("7994.3万")
-                .fontSize(16)
-              Text("获赞")
-                .fontSize(14)
-                .fontColor('#ABB0B5')
-                .margin({ top: 2 })
-            }
-          }
-          .width('100%')
-
-          Row() {
+      Column() {
+        Row() {
+          Column() {
             Row() {
-              Row() {
-                Image($r('app.media.FluentLineHorizontal320Regular'))
-                  .width(14)
-                Text("已关注")
-                  .fontColor('#B2B8BC')
+              Column() {
+                Text("858.6万")
+                  .fontSize(16)
+                Text("粉丝")
                   .fontSize(14)
+                  .fontColor('#ABB0B5')
+                  .margin({ top: 2 })
+              }
+
+              Image($r('app.media.space_divider_vertical'))
+                .width(20)
+
+              Column() {
+
+                Text("120")
+                  .fontSize(16)
+
+                Text("关注")
+                  .fontSize(14)
+                  .fontColor('#ABB0B5')
+                  .margin({ top: 2 })
+              }
+
+              Image($r('app.media.space_divider_vertical'))
+                .width(20)
+
+              Column() {
+                Text("7994.3万")
+                  .fontSize(16)
+                Text("获赞")
+                  .fontSize(14)
+                  .fontColor('#ABB0B5')
+                  .margin({ top: 2 })
               }
             }
-            .justifyContent(FlexAlign.Center)
-            .borderRadius(5)
-            .width(150)
-            .height(30)
-            .backgroundColor('#E3E5E7')
+            .justifyContent(FlexAlign.End)
+            .margin({ right: '10%' })
+            .width('100%')
 
             Row() {
-              Image($r('app.media.OcticonChevronDown24'))
-                .width(30)
-            }
-            .backgroundColor('#E3E5E7')
-            .borderRadius(5)
-            .margin({ left: 10 })
+              Row() {
+                Row() {
+                  Image($r('app.media.FluentLineHorizontal320Regular'))
+                    .width(14)
+                  Text("已关注")
+                    .fontColor('#B2B8BC')
+                    .fontSize(14)
+                }
+              }
+              .justifyContent(FlexAlign.Center)
+              .borderRadius(5)
+              .width(150)
+              .height(30)
+              .backgroundColor('#E3E5E7')
 
+              Row() {
+                Image($r('app.media.OcticonChevronDown24'))
+                  .width(30)
+              }
+              .backgroundColor('#E3E5E7')
+              .borderRadius(5)
+              .margin({ left: 10 })
+
+            }
+            .justifyContent(FlexAlign.End)
+            .margin({ top: 10, right:'10%' })
+            .width('100%')
           }
-          .margin({ top: 10 })
+          .margin({ top: 10})
           .width('100%')
         }
+        .width('100%')
 
-        .margin({ top: 10, left: 150 })
-      }
-
-      Row() {
-        Text("哔哩哔哩纪录片")
-          .fontSize(16)
-          .fontColor('#FF5B9A')
-        Image($r('app.media.lv_6'))
-          .width(20)
-          .fillColor('#FF0000')
-
-        Image($r('app.media.member_ten'))
-          .width(100)
         Row() {
-
-        }.width('25%')
-      }
-      .justifyContent(FlexAlign.SpaceEvenly)
-      .width('100%')
-      .padding(10)
-
-      Row() {
-        Row() {
-          Image($r('app.media.charge'))
+          Text("哔哩哔哩纪录片")
+            .fontSize(16)
+            .fontColor('#FF5B9A')
+          Image($r('app.media.lv_6'))
             .width(20)
-            .borderRadius(40)
-          Text("bilibili机构认证：哔哩哔哩官方账号")
+            .fillColor('#FF0000')
+
+          Image($r('app.media.member_ten'))
+            .width(100)
+          Row() {
+
+          }.width('25%')
+        }
+        .justifyContent(FlexAlign.SpaceEvenly)
+        .width('100%')
+        .padding(10)
+
+        Row() {
+          Row() {
+            Image($r('app.media.charge'))
+              .width(20)
+              .borderRadius(40)
+            Text("bilibili机构认证：哔哩哔哩官方账号")
+              .fontSize(12)
+              .fontColor('#60666B')
+              .margin({ left: 5 })
+          }
+
+          Text("详情")
+            .fontColor('#0088BF')
+            .fontSize(14)
+        }
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceBetween)
+        .padding({ left: 10, right: 20 })
+        .margin({ left: 10 })
+
+        Row() {
+          Text("莫得感情偶尔咕咕的纪录片")
             .fontSize(12)
             .fontColor('#60666B')
-            .margin({ left: 5 })
         }
+        .width('100%')
+        .padding(15)
 
-        Text("详情")
-          .fontColor('#0088BF')
-          .fontSize(14)
-      }
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceBetween)
-      .padding({ left: 10, right: 20 })
-      .margin({ left: 10 })
+        Row() {
+          Image($r('app.media.ip'))
+            .width(15)
+            .margin({ right: 2 })
+          Text("IP 属地：上海")
+            .fontSize(12)
+            .fontColor('#60666B')
+        }
+        .padding({ left: 15 })
+        .width('100%')
 
-      Row() {
-        Text("莫得感情偶尔咕咕的纪录片")
-          .fontSize(12)
-          .fontColor('#60666B')
       }
-      .width('100%')
-      .padding(15)
-
-      Row() {
-        Image($r('app.media.ip'))
-          .width(15)
-          .margin({ right: 2 })
-        Text("IP 属地：上海")
-          .fontSize(12)
-          .fontColor('#60666B')
-      }
-      .padding({ left: 15 })
       .width('100%')
 
       Row() {
@@ -247,5 +255,6 @@ export struct UserDynamicHeader {
       .border({ width: 1, color: '#E4E5E6' })
 
     }
+    .width('100%')
   }
 }

@@ -1,8 +1,9 @@
+
+
 import {BottomBar} from '../components/BottomBar'
 import { HotPage } from '../components/HotPage'
 import { LivePage } from '../components/LivePage'
 import { Recommend } from '../components/Recommend'
-
 
 
 @Builder function Top(){
@@ -14,13 +15,13 @@ import { Recommend } from '../components/Recommend'
       Stack(){
         TextInput({placeholder: "我是神里绫华的狗"})
           .backgroundColor(Color.White)
-          .height(27)
+          .height(33)
           .placeholderColor('#ccc')
           .placeholderFont({size: 14})
-          .padding({left: 30})
+          .padding({left: 35})
         Image($r('app.media.search'))
           .width(15)
-          .position({x: 10, y: 6})
+          .position({x: 10, y: 8})
           .fillColor(Color.White)
       }
       .layoutWeight(1)
@@ -31,32 +32,40 @@ import { Recommend } from '../components/Recommend'
     }
 
 
-    List({space: 25}){
+    List({space: 23}){
       ForEach(this.titles, (title, index) => {
         ListItem(){
           if(this.ids == index){
             Column(){
               Text(title)
+                .fontSize(14)
                 .fontColor(Color.White)
                 .fontWeight(FontWeight.Bold)
                 .onClick(() => this.ids = index)
               Divider()
                 .width(40)
-                .height(15)
+                .height(23)
                 .color(Color.White)
-                .strokeWidth(5)
+                .strokeWidth(3)
             }
           }else{
             Text(title)
+              .fontSize(14)
               .fontColor(Color.White)
               .onClick(() => this.ids = index)
           }
         }
       })
+
+      ListItem(){
+        Image($r('app.media.home_sort'))
+          .width(19)
+          .margin({top: -3})
+      }
     }
     .listDirection(Axis.Horizontal)
     .margin({top: 20})
-    .height(28)
+    .height(30)
   }
   .width('100%')
   .height(120)
@@ -86,7 +95,8 @@ struct HomePage {
         Recommend()
       }
 
-      BottomBar({page_index:0})
+      BottomBar({page_index: 0})
+
     }
     .width('100%')
     .height('100%')
