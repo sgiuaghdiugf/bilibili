@@ -1,6 +1,14 @@
 import router from '@ohos.router'
 import { Commodity } from '../Class/Commodity'
 
+@Styles function card() {
+  .width('100%')
+  // .border({ width: 1, color: Color.Black })
+  .borderRadius(5)
+  .backgroundColor('#FFFFFF')
+  .padding({ left: 10, right: 10, top: 10 })
+}
+
 @Component
 struct Tag {
   private title: string
@@ -12,7 +20,7 @@ struct Tag {
         .fontColor($r('app.color.pink'))
     }
     .borderRadius(5)
-    .border({ width: 1, color: '#000000' })
+    // .border({ width: 1, color: '#000000' })
     .padding(5)
     .backgroundColor('#FFEEF4')
 
@@ -33,6 +41,9 @@ struct CommodityDetailPage {
           Row() {
             Image($r('app.media.commodity_left_arrow'))
               .width(25)
+              .onClick(() => {
+                router.back()
+              })
           }
           .borderRadius('50%')
           .backgroundColor("#fdfdfd")
@@ -99,7 +110,7 @@ struct CommodityDetailPage {
           .height(70)
           .justifyContent(FlexAlign.SpaceBetween)
           .padding(10)
-          .border({ width: 1, color: Color.Black })
+          // .border({ width: 1, color: Color.Black })
           .width('100%')
 
           Image($r('app.media.BILIBILI'))
@@ -127,8 +138,7 @@ struct CommodityDetailPage {
               .fillColor('#FFFFFF')
           }
           .margin({ right: -20 })
-
-          .width(80)
+          .width(70)
           .height(20)
           .borderRadius(10)
           .backgroundColor('#FF589A')
@@ -185,10 +195,124 @@ struct CommodityDetailPage {
         .justifyContent(FlexAlign.SpaceBetween)
 
       }
+      .backgroundColor('#FFFFFF')
       .width('100%')
       .padding(10)
+      .margin({ bottom: 15 })
 
+      Column({ space: 10 }) {
+        Row() {
+          Text("参数")
+            .fontSize(14)
+            .fontColor('#999999')
+
+          Row() {
+            Column() {
+              Text(" 尺寸")
+                .fontSize(12)
+                .fontColor('#999999')
+              Text("高约140mm")
+                .fontSize(14)
+            }
+
+            Image($r('app.media.space_divider_vertical'))
+              .height(30)
+              .fillColor('#F4F4F4')
+              .margin({ left: -5 })
+          }
+
+          Row() {
+            Column() {
+              Text(" 尺寸")
+                .fontSize(12)
+                .fontColor('#999999')
+              Text("高约140mm")
+                .fontSize(14)
+            }
+
+            Image($r('app.media.space_divider_vertical'))
+              .height(30)
+              .fillColor('#F4F4F4')
+              .margin({ left: -5 })
+          }
+
+          Row() {
+            Column() {
+              Text(" 尺寸")
+                .fontSize(12)
+                .fontColor('#999999')
+              Text("高约140mm")
+                .fontSize(14)
+            }
+
+            Image($r('app.media.right_arrow_2'))
+              .width(20)
+              .fillColor('#CCCCCC')
+          }
+        }
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceBetween)
+
+        Row() {
+          Text("预售\n流程")
+            .fontSize(14)
+            .fontColor('#999999')
+          Image($r('app.media.yushouliucheng'))
+            .width('86%')
+          Image($r('app.media.right_arrow_2'))
+            .width(20)
+            .fillColor('#CCCCCC')
+        }
+        .width('100%')
+      }
+      .card()
+
+      Row() {
+        Row() {
+          Image($r('app.media.customer_service'))
+            .width(30)
+          Image($r('app.media.shop_car'))
+            .width(35)
+            .margin({ left: 15, right: 10 })
+        }
+
+        Row() {
+          Text("加购物车")
+            .fontSize(16)
+            .fontColor('#D7557A')
+        }
+        .width(120)
+        .borderRadius(25)
+        .border({ width: 2, color: $r('app.color.pink') })
+        .height(45)
+        .justifyContent(FlexAlign.Center)
+
+        Row() {
+          Column() {
+            Text("支付定金")
+              .fontSize(16)
+              .fontColor('#FFFFFF')
+            Text(`${this.commodity.price * 0.15}`)
+              .fontSize(16)
+              .fontColor('#FFFFFF')
+          }
+        }
+        .backgroundColor('#FF5F93')
+        .borderRadius(25)
+        .width(120)
+        // .border({ width: 1, color: Color.Red })
+        .height(45)
+        .justifyContent(FlexAlign.Center)
+      }
+      .padding(10)
+      .justifyContent(FlexAlign.SpaceBetween)
+      .width('100%')
+      .layoutWeight(1)
+      .border({ width: 1, color: '#EBEBEB' })
+      .borderWidth({ left: 0, right: 0, bottom: 0 })
+      .backgroundColor('#FFFFFF')
     }
+    .backgroundColor('#F4F4F4')
     .width('100%')
   }
 }
