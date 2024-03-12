@@ -17,6 +17,8 @@
     "pages/DynamicPage",
     "pages/MyAccountPage",
     "pages/VideoPage",
-    "pages/MemberShopPage"
+    "pages/MemberShopPage",
+    "pages/GenshinStartPage",
+    "pages/HistoryPage"
   ]
 }

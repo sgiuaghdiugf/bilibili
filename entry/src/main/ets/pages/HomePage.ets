@@ -4,7 +4,6 @@ import { LivePage } from '../components/LivePage'
 import { Recommend } from '../components/Recommend'
 
 
-
 @Builder function Top(){
   Column(){
     Row({space: 15}){
@@ -86,7 +85,8 @@ struct HomePage {
         Recommend()
       }
 
-      BottomBar({page_index:0})
+      BottomBar({page_index: 0})
+
     }
     .width('100%')
     .height('100%')
