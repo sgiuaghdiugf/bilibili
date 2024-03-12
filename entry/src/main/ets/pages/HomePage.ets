@@ -86,8 +86,7 @@ struct HomePage {
         Recommend()
       }
 
-      BottomBar()
-
+      BottomBar({page_index:0})
     }
     .width('100%')
     .height('100%')

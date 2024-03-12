@@ -42,7 +42,7 @@ export function my_collect_onclick() {
 export function my_setting_onclick(){
   router.pushUrl(
     {
-      url: 'pages/MyWalletPage'
+      url: 'pages/Setting'
     },
     router.RouterMode.Single,
     err => {
