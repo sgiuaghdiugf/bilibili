@@ -19,7 +19,7 @@ export function my_wallet_onclick() {
 export function my_course_onclick() {
   router.pushUrl(
     {
-      url: 'pages/MyWalletPage'
+      url: 'pages/MyCoursePage'
     },
     router.RouterMode.Single,
     err => {

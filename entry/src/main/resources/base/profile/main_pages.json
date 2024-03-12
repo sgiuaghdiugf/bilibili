@@ -20,6 +20,7 @@
     "pages/ShowImagePage",
     "pages/Account_Data",
     "pages/UserDynamicPage",
-    "pages/MySpacePage"
+    "pages/MySpacePage",
+    "pages/MyCoursePage"
   ]
 }

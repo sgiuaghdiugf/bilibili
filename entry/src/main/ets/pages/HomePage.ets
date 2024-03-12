@@ -5,7 +5,7 @@ import {BottomBar} from '../components/BottomBar'
 
 @Entry
 @Component
-struct HomePage {
+export struct HomePage {
   titles: string[] = ['直播', '推荐', '热门', '追番', '影视', '游戏']
   @State ids: number = 1
 

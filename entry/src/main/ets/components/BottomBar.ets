@@ -117,7 +117,6 @@ struct BottomSon {
   .borderRadius(15)
   .backgroundColor('#ee443c')
 }
-@Entry
 @Component
 export struct BottomBar {
   @State idx: number = 0x3f
