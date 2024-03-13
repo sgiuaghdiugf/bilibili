@@ -15,16 +15,11 @@
     "pages/MyCoursePage",
     "pages/Express_Message",
     "pages/Play_Setting",
-    "pages/UserDynamicPage",
     "pages/VideoPage",
-<<<<<<< HEAD
     "pages/MemberShopPage",
-    "pages/Saving"
-=======
+    "pages/Saving",
     "pages/GenshinStartPage",
     "pages/HistoryPage",
-    "pages/MemberShopPage",
     "pages/CommodityDetailPage"
->>>>>>> 03eff7f156cc64eaa478473ce3a26d1200be399f
   ]
 }
