@@ -28,7 +28,6 @@ struct moreCard {
           .fontSize(12)
           .margin({ left: 9 })
       }
-
       Row() {
         Image($r('app.media.right_arrow_2'))
           .width(12)
@@ -40,7 +39,7 @@ struct moreCard {
     .width(165)
     .borderRadius(10)
     .padding(5)
-    .border({ width: 1, color: '#F4F4F4' })
+    .border({ width: 1, color: '#E7E7E7' })
     .justifyContent(FlexAlign.SpaceBetween)
     .backgroundColor('#FFFFFF')
 
