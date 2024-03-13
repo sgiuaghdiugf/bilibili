@@ -61,9 +61,9 @@ struct MumberShopPage {
 
           Row() {
             Image($r('app.media.shop_car'))
-              .width(20)
+              .width(25)
             Image($r('app.media.Avatar'))
-              .width(20)
+              .width(25)
               .margin({ left: 20 })
           }
         }
@@ -74,7 +74,7 @@ struct MumberShopPage {
         Row() {
           Row() {
             Image($r('app.media.coin'))
-              .width(20)
+              .width(25)
               .margin({ right: 3 })
             Text("签到\n有礼")
               .fontSize(10)
