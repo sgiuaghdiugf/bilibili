@@ -20,6 +20,6 @@
     "pages/GenshinStartPage",
     "pages/HistoryPage",
     "pages/MemberShopPage",
-    "pages/CommodityDetailPage",
+    "pages/CommodityDetailPage"
   ]
 }
