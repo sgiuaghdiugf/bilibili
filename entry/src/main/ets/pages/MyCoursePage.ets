@@ -4,44 +4,77 @@ import {my_course_Tabs_01, my_course_Tabs_02} from '../components/sch_my_course_
 @Entry
 @Component
 struct MyCoursePage {
-  @State message: string = 'Hello World'
+  /*@State message: string = 'Hello World'
 
   build() {
-    Column(){
+    // Column(){
+    //
+    //   Head_01()
+    //   List(){
+    //     ListItem(){
+    //       Head_02()
+    //     }
+    //
+    //     ListItem(){
+    //       Column(){
+    //         my_course_Tabs_01()
+    //       }
+    //       .height(250)
+    //     }
+    //
+    //     ListItem(){
+    //       Column(){
+    //         my_course_Tabs_02()
+    //       }
+    //       .height(700)
+    //     }
+    //
+    //   }
+    //   .layoutWeight(1.1)
+    //
+    //
+    //
+    // }
+    // .height('100%')
+    // .width('100%')
+  }*/
+  @State listPosition: number = 0; // 0代表滚动到List顶部，1代表中间值，2代表滚动到List底部。
+  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  private scrollerForScroll: Scroller = new Scroller()
+  private scrollerForList: Scroller = new Scroller()
 
+  build() {
+    Column() {
       Head_01()
-      List(){
-        ListItem(){
+      Scroll(this.scrollerForScroll) {
+        Column() {
           Head_02()
-        }
 
-        ListItem(){
-          Column(){
+          Column() {
             my_course_Tabs_01()
           }
+          .margin({bottom:10})
           .height(250)
-        }
 
-        ListItem(){
-          Column(){
-            my_course_Tabs_02()
+          List(){
+            ListItem(){
+                my_course_Tabs_02()
+            }
+            .sticky(Sticky.Normal)
           }
-          .height(700)
+
+
+
         }
-
       }
-      .layoutWeight(1.1)
-
-
-
-    }
-    .height('100%')
-    .width('100%')
+      .width("100%").height("100%")
+      .scrollBar(BarState.Off)
+    }.width('100%').height('100%').backgroundColor('#ffffff')
   }
 }
 
 @Component
-struct Head_01{
+export struct Head_01{
   build(){
     Row(){
       Image($r('app.media.sch_fanhui'))
@@ -53,9 +86,9 @@ struct Head_01{
 
       Text('我的课程')
         .fontSize(15)
-        .margin({right:30})
+        .margin({right:50})
         .fontWeight(FontWeight.Medium)
-        .width('80')
+        .width(60)
 
       Image($r('app.media.sch_ketangzhuanqu'))
         .width(20)
@@ -64,6 +97,7 @@ struct Head_01{
         .fontSize(15)
         .fontColor('#aaaaaa')
     }
+    .justifyContent(FlexAlign.SpaceAround)
     .width('100%')
     .height(40)
   }
@@ -71,7 +105,7 @@ struct Head_01{
 
 
 @Component
-struct Head_02{
+export struct Head_02{
 
   private items:struct_head_02_item[]=[
     new struct_head_02_item($r('app.media.sch_quanbao'),'券包'),
@@ -160,3 +194,4 @@ class struct_head_02_item{
     this.name = name;
   }
 }
+

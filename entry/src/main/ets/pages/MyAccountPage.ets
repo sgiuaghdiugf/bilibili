@@ -1,4 +1,5 @@
 import font from '@ohos.font'
+import router from '@ohos.router'
 import { LineItem, Item, buildItem, BottomBar } from '../components/BottomBar'
 import * as fun from '../sch_functions/click_function'
 
@@ -74,10 +75,16 @@ export function buildGridItem(item: Item, column_width: number,
         Blank()
 
         Text('空间')
+          .onClick(()=>{
+            fun.my_space_onclick()
+          })
           .fontSize(12)
           .fontColor('#a0a0a0')
 
         Image($r('app.media.qianwang'))
+          .onClick(()=>{
+            fun.my_space_onclick()
+          })
           .margin({ right: 5 })
           .width('5%')
       }

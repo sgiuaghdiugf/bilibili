@@ -1,8 +1,8 @@
 import {my_course_Tabs_01} from '../components/sch_my_course_tabs'
-
+import {DynamicPage} from '../components/sch_dynamic_component'
 @Entry
 @Component
-struct TabsExample {
+export struct my_space_tab {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#df7b9d'
   @State currentIndex: number = 0
@@ -31,7 +31,7 @@ struct TabsExample {
         }.tabBar(this.TabBuilder(0, '主页'))
 
         TabContent() {
-          Column().width('100%').height('100%').backgroundColor('#007DFF')
+          DynamicPage()
         }.tabBar(this.TabBuilder(1, '动态'))
 
         TabContent() {
@@ -54,11 +54,12 @@ struct TabsExample {
       .onChange((index: number) => {
         this.currentIndex = index
       })
-      .width(360)
+      .width('100%')
       .height('100%')
-      .margin({ top: 52 })
+      .margin({ top: 0 })
       .backgroundColor('#ffffff')
     }.width('100%')
+    .height('100%')
   }
 }
 

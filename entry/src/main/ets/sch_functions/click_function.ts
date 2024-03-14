@@ -2,6 +2,12 @@ import router from '@ohos.router'
 
 
 export function my_space_onclick() {
+  router.pushUrl(
+    {
+      url:'pages/MySpacePage'
+    },
+    router.RouterMode.Single,
+  )
 }
 
 export function my_wallet_onclick() {
