@@ -14,7 +14,7 @@ struct VideoPage {
   @State index: number = router.getParams()['id']
   @State videoObject: video = videoObjects[this.index]
   @State videoSrc: Resource = $rawfile('原神启动.mp4')
-  @State previewUri: Resource = $r(`app.media.video_${this.videoObject.id}`)
+  // @State previewUri: Resource = $r('app.media.cover')
   @State curRate: PlaybackSpeed = PlaybackSpeed.Speed_Forward_1_00_X
   @State isAutoPlay: boolean = false
   @State showControls: boolean = true
@@ -35,12 +35,13 @@ struct VideoPage {
     Column() {
       Video({
         src: this.videoSrc,
-        previewUri: this.previewUri,
+        // previewUri: this.previewUri,
         currentProgressRate: this.curRate,
         controller: this.controller
       }).width('100%').height(240)
         .autoPlay(this.isAutoPlay)
         .controls(this.showControls)
+        .objectFit(ImageFit.Contain)
 
       Row() {
         Row() {
