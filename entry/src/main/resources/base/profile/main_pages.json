@@ -9,7 +9,6 @@
     "pages/MyWalletPage",
     "pages/ShowImagePage",
     "pages/Account_Data",
-
     "pages/UserDynamicPage",
     "pages/MySpacePage",
     "pages/MyCoursePage",
@@ -20,6 +19,7 @@
     "pages/Saving",
     "pages/GenshinStartPage",
     "pages/HistoryPage",
-    "pages/CommodityDetailPage"
+    "pages/CommodityDetailPage",
+    "pages/LoginPage"
   ]
 }
