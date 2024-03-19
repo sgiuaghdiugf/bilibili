@@ -56,7 +56,7 @@ export struct ShopBar{
           .fontSize(14)
           .fontColor('#fdfaf7')
 
-        Text('￥16.35')
+        Text(`￥${this.shop_car_item.price * 0.15}`)
           .fontWeight(FontWeight.Medium)
           .fontSize(13)
           .fontColor('#fdfaf7')
