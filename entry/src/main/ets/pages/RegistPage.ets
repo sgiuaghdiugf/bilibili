@@ -1,7 +1,14 @@
+
+import router from '@ohos.router';
+import { pre_login, pre_register } from '../components/login_register'
+
 @Entry
 @Component
-struct LoginPage {
+struct RegisterPage {
   @State message: string = 'Hello World'
+  register = new pre_register()
+  name:string;
+  password:string;
   icons: ResourceStr[] = [
     $r('app.media.weichat'),
     $r('app.media.qq'),
@@ -30,6 +37,9 @@ struct LoginPage {
                 .width(18)
                 .margin({right: '2%'})
               TextInput({placeholder: '请输入用户名'})
+                .onChange(value=>{
+                  this.name = value;
+                })
                 .width('93%')
                 .placeholderColor('#c0c0c0')
                 .backgroundColor(Color.White)
@@ -53,6 +63,9 @@ struct LoginPage {
                 .width(18)
                 .margin({right: '2%'})
               TextInput({placeholder: '请输入密码'})
+                .onChange(value => {
+                  this.password = value;
+                })
                 .width('93%')
                 .placeholderColor('#c0c0c0')
                 .backgroundColor(Color.White)
@@ -71,6 +84,62 @@ struct LoginPage {
             Text('注册')
               .fontColor(Color.White)
           }
+          .onClick(()=>{
+            this.register.getCodeMethod(this.name,this.password)
+              .then(
+                code => {
+                  console.info(code.toString())
+                  if(code == 0){
+                    console.log('用户名已存在，换一个？')
+                    AlertDialog.show(
+                      {
+                        title: '注册失败',
+                        message: '用户名已存在换一个？',
+                        autoCancel: true,
+                        alignment: DialogAlignment.Center,
+                        offset: { dx: 0, dy: 0 },
+                        gridCount: 3,
+                        confirm: {
+                          value: '确定',
+                          action: () => {
+                            console.info('Button-clicking callback')
+                          }
+                        },
+                        cancel: () => {
+                          console.info('Closed callbacks')
+                        }
+                      })
+
+                  }else{
+                    AlertDialog.show(
+                      {
+                        title: '注册成功',
+                        message: '点击确定跳转到登录界面',
+                        autoCancel: true,
+                        alignment: DialogAlignment.Center,
+                        offset: { dx: 0, dy: 0 },
+                        gridCount: 3,
+                        confirm: {
+                          value: '确定',
+                          action: () => {
+                            router.replaceUrl(
+                              {
+                                url:'pages/LoginPage'
+                              },
+                            )
+                          }
+                        },
+                        cancel: () => {
+                          console.info('Closed callbacks')
+                        }
+                      })
+
+
+                  }
+
+                }
+              )
+          })
           .width('100%')
           .height('7%')
           .border({radius: 20})
