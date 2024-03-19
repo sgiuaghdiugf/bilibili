@@ -11,7 +11,7 @@ export struct VideoCover {
 
   aboutToAppear(){
     videoCover.init()
-    console.log(videoCover.list.length.toString())
+    this.videoObjects = videoCover.videoObjects
   }
 
   build() {

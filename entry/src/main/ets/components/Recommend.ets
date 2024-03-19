@@ -66,6 +66,7 @@ class SwiperInfo{
 }
 
 let imgs: ResourceStr[] = [$r('app.media.video_1'), $r('app.media.video_2'), $r('app.media.video_3'), $r('app.media.video_4'), $r('app.media.video_5'), $r('app.media.video_6'), $r('app.media.video_7'), $r('app.media.video_8')]
+
 @Builder function RecommendModule(){
   List(){
     ForEach(this.videoObjects, (video: video) => {
@@ -161,6 +162,7 @@ export struct Recommend {
   videoObjects: video[]
   @Prop keyword: string
 
+
   swiperInfo: SwiperInfo[] = [
     new SwiperInfo($r("app.media.swiper_1"), '正在直播KPL：广州TTG vs 上海EDG.M'),
     new SwiperInfo($r('app.media.swiper_2'), '游戏高手帮我玩，用户福利大放送！'),
@@ -176,7 +178,7 @@ export struct Recommend {
     this.data = new MyDataSource(list)
 
     videoObject.init()
-    this.videoObjects = videoObject.list
+    this.videoObjects = videoObject.videoObjects
   }
 
   build() {
