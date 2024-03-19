@@ -37,7 +37,7 @@ export function my_course_onclick() {
 export function my_collect_onclick() {
   router.pushUrl(
     {
-      url: 'pages/MyWalletPage'
+      url: 'pages/Saving'
     },
     router.RouterMode.Single,
     err => {

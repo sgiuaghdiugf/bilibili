@@ -1,6 +1,6 @@
 import router from '@ohos.router'
 import { Commodity } from '../Class/Commodity'
-
+import {ShopBar} from '../components/sch_shopBar'
 @Component
 struct RightArrow {
   build() {
@@ -49,16 +49,28 @@ struct moreCard {
 @Component
 struct commodityDetailBottom {
   private commodity: Commodity
-
+  @State count:number=0;
   build() {
     Column() {
-      Row() {
+      /*Row() {
         Row() {
           Image($r('app.media.customer_service'))
             .width(30)
-          Image($r('app.media.shop_car'))
-            .width(35)
-            .margin({ left: 15, right: 10 })
+          // Image($r('app.media.shop_car'))
+          //   .width(35)
+          //   .margin({ left: 15, right: 10 })
+          Badge(
+            {
+              count:this.count,
+              style:{
+                color:Color.Blue,
+                fontSize:10,
+                badgeSize:10,
+              }
+            }
+          )
+          .backgroundImage($r('app.media.shop_car'))
+          .backgroundImageSize(35)
         }
 
         Row() {
@@ -95,7 +107,8 @@ struct commodityDetailBottom {
       // .layoutWeight(1)
       .border({ width: 1, color: '#EBEBEB' })
       .borderWidth({ left: 0, right: 0, bottom: 0 })
-      .backgroundColor('#FFFFFF')
+      .backgroundColor('#FFFFFF')*/
+      ShopBar({shop_car_item:this.commodity})
     }
     .width('100%')
   }
