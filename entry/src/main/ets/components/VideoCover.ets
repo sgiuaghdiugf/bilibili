@@ -1,14 +1,20 @@
 import router from '@ohos.router'
 import { video } from '../videomodel/VideoInfo'
-import { videoObjects } from '../videomodel/VideoObject'
+import { videoCover } from '../videomodel/VideoObject'
 
 @Component
 export struct VideoCover {
   playingId: number
+  @State videoObjects: video[] = videoCover.list
+
+  aboutToAppear(){
+    videoCover.init()
+    console.log(videoCover.list.length.toString())
+  }
 
   build() {
     List(){
-      ForEach(videoObjects, (video: video, index) => {
+      ForEach(this.videoObjects, (video: video, index) => {
         if(this.playingId != video.id){
           ListItem(){
             Column(){

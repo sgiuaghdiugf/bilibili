@@ -1,7 +1,7 @@
 import router from '@ohos.router'
 import { VideoCover } from '../components/VideoCover'
 import { video } from '../videomodel/VideoInfo'
-import { videoObjects } from '../videomodel/VideoObject'
+import { videoObject } from '../videomodel/VideoObject'
 @Extend(Text) function textGrayMargin(){
   .fontSize(12)
   .fontColor('#b7b9be')
@@ -12,7 +12,7 @@ import { videoObjects } from '../videomodel/VideoObject'
 @Component
 struct VideoPage {
   @State index: number = router.getParams()['id']
-  @State videoObject: video = videoObjects[this.index]
+  @State videoObject: video = videoObject.list[this.index]
   @State videoSrc: Resource = $rawfile('原神启动.mp4')
   // @State previewUri: Resource = $r('app.media.cover')
   @State curRate: PlaybackSpeed = PlaybackSpeed.Speed_Forward_1_00_X

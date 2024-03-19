@@ -80,19 +80,18 @@ import { Recommend } from '../components/Recommend'
 struct HomePage {
   titles: string[] = ['直播', '推荐', '热门', '追番', '影视', '游戏']
   @State ids: number = 1
+  @State keyword: string = ""
 
   build() {
     Column() {
       Top()
 
-      if (this.ids === 1) {
-        Recommend()
-      } else if (this.ids === 2) {
+      if (this.ids === 2) {
         HotPage()
       } else if (this.ids === 0) {
         LivePage()
       } else {
-        Recommend()
+        Recommend({keyword: this.keyword})
       }
 
       BottomBar({page_index: 0})
