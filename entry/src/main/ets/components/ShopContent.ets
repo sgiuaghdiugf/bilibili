@@ -440,7 +440,6 @@ export struct ShopContent {
               Image(item.images[0])
                 .width(160)
                 .height(180)
-
               Column({ space: 5 }) {
                 Text(item.name)
                   .fontSize(12)
@@ -472,6 +471,7 @@ export struct ShopContent {
               .padding({ left: 10 })
               .width('100%')
             }
+            // .width('100%')
             .onClick(() => {
               router.pushUrl(
                 { url: "pages/CommodityDetailPage", params: { commodity: item } },
@@ -490,14 +490,14 @@ export struct ShopContent {
           }
         })
       }
-      .margin({ top: 10 })
       .alignListItem(ListItemAlign.Center)
       .backgroundColor('#F2F4F6')
-      // .lanes({ minLength: 161, maxLength: 162 })
-      .lanes({ minLength: '35%', maxLength: '35%' })
-      .layoutWeight(1)
       .width('100%')
+      .lanes({ minLength: 190, maxLength: 190 })
+      // .lanes({ minLength: '35%', maxLength: '35%' })
+      .layoutWeight(1)
     }
+
     .width('100%')
   }
 }

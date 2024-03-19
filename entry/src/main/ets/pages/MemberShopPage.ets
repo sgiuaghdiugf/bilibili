@@ -67,7 +67,6 @@ struct MumberShopPage {
               .margin({ left: 20 })
           }
         }
-
         .width('100%')
         .justifyContent(FlexAlign.SpaceBetween)
 
@@ -121,7 +120,6 @@ struct MumberShopPage {
         .height(50)
         .width('100%')
 
-
         List({ space: 15 }) {
           ForEach(this.types, (type: Type) => {
             ListItem() {
@@ -160,15 +158,12 @@ struct MumberShopPage {
 
         ShopContent()
           .layoutWeight(1)
-
-
       }
-      // .border({ width: 1, color: Color.Black })
       .backgroundColor('#F0F2F4')
       .layoutWeight(1)
-      .padding({ left: 10, right: 10, top: 10 })
+      // .padding({ left: 10, right: 10, top: 10 })
 
-      BottomBar(({page_index:3}))
+      BottomBar(({ page_index: 3 }))
 
     }
     .width('100%')
