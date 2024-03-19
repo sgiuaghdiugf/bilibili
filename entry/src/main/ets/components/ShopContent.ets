@@ -1,6 +1,58 @@
 import router from '@ohos.router'
 import { Commodity } from '../Class/Commodity'
 
+@Builder export function buildShop(item: Commodity){
+  Column() {
+    Image(item.images[0])
+      .width('80%')
+    Blank()
+    Column({ space: 5 }) {
+      Text(item.name)
+        .fontSize(12)
+          // .border({ width: 1, color: Color.Black })
+        .width('100%')
+      Row() {
+        Text(item.tagName)
+          .fontSize(10)
+          .fontColor('#FF7F0D')
+          .backgroundColor('#FFF3EA')
+      }
+      .width('100%')
+
+      Row() {
+        Text('新人卷后￥')
+          .fontSize(12)
+          .fontColor($r('app.color.pink'))
+        Text(`${item.countPrice}`)
+          .fontSize(14)
+          .fontWeight(FontWeight.Bold)
+          .fontColor($r('app.color.pink'))
+          .margin({ right: 5 })
+        Text(`￥${item.price}`)
+          .fontSize(12)
+          .fontColor('#94989E')
+      }
+      .width('100%')
+    }
+    .padding({ left: 30 })
+    .width('100%')
+  }
+  .onClick(() => {
+    router.pushUrl(
+      { url: "pages/CommodityDetailPage", params: { commodity: item } },
+      router.RouterMode.Single,
+      (err) => {
+        console.log(err.message)
+      }
+    )
+  })
+  .padding({ bottom: 10 })
+  .backgroundColor(Color.White)
+  // .padding({ bottom: 10 })
+  .borderRadius(10)
+  .width(180)
+  .height(250)
+}
 
 @Component
 export struct ShopContent {
@@ -485,7 +537,6 @@ export struct ShopContent {
             .backgroundColor(Color.White)
             .margin({ bottom: 10 })
             .borderRadius(10)
-            // .border({ width: 1, color: Color.Black })
             .width('100%')
           }
         })
@@ -494,7 +545,7 @@ export struct ShopContent {
       .alignListItem(ListItemAlign.Center)
       .backgroundColor('#F2F4F6')
       // .lanes({ minLength: 161, maxLength: 162 })
-      .lanes({ minLength: '35%', maxLength: '35%' })
+      .lanes({ minLength: '30%', maxLength: '30%' })
       .layoutWeight(1)
       .width('100%')
     }

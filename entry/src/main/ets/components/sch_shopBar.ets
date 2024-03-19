@@ -1,10 +1,11 @@
 import router from '@ohos.router';
 import {Commodity} from '../Class/Commodity'
 import {shopCarArray} from '../Class/ShopCarArrayClass'
+@Entry
 @Component
 export struct ShopBar{
   shop_car_item:Commodity;
-  @State count:number=10;
+  // @State count:number=0;
   build(){
     Row() {
       Image($r('app.media.sch_kefu'))
@@ -12,7 +13,7 @@ export struct ShopBar{
 
       Badge(
         {
-          value:this.count.toString(),
+          count:shopCarArray.count,
           position:BadgePosition.RightTop,
           style:{
             badgeSize:20,
@@ -43,7 +44,7 @@ export struct ShopBar{
       }
       .onClick(()=>{
         shopCarArray.pushCommodity(this.shop_car_item)
-        this.count++
+        shopCarArray.count++
       })
       .justifyContent(FlexAlign.Center)
       .width(120)

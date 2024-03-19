@@ -1,6 +1,7 @@
 import { Commodity } from '../Class/Commodity'
 
-export class ShopCarArray{
+class ShopCarArray{
+  @State count:number=0;
   public shop_car_array:Commodity[]=[];
 
 
