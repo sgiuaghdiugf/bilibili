@@ -6,7 +6,8 @@ struct Index {
 
   aboutToAppear(){
     router.replaceUrl({
-      url: 'pages/LoginPage'
+      // url: 'pages/LoginPage'
+      url: 'pages/HomePage'
     }, router.RouterMode.Single)
   }
 

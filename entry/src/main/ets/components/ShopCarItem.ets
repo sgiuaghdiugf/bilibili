@@ -13,6 +13,7 @@ export struct ShopCarItem {
       Column({ space: 5 }) {
         Text(this.item.detailName)
           .fontSize(12)
+          .lineHeight(20)
           .width('100%')
         Row() {
           Column() {
@@ -33,12 +34,14 @@ export struct ShopCarItem {
             .margin({ top: 10 })
             .width('100%')
           }
-          .width('70%')
+          .width('60%')
 
           Column() {
             Text("限购5件")
               .fontSize(10)
               .fontColor($r('app.color.pink'))
+              .width('100%')
+              .textAlign(TextAlign.End)
             Row() {
               Row() {
                 Image($r('app.media.shop_car_sub')).width(10)
@@ -56,7 +59,6 @@ export struct ShopCarItem {
 
               Row() {
                 Image($r('app.media.shop_car_add')).width(10)
-                // .fillColor('#C0C0C0')
               }
               .justifyContent(FlexAlign.Center)
               .backgroundColor('#FFFFFF')
@@ -66,14 +68,17 @@ export struct ShopCarItem {
               .borderRadius(20)
             }
             .margin({ top: 10 })
+            .justifyContent(FlexAlign.End)
+            .width('100%')
           }
+          .padding({ left: 10 })
+          .width('40%')
           .alignItems(HorizontalAlign.End)
-          .width('30%')
         }
+        .width('100%')
         .margin({ top: 10 })
-
       }
-      .padding({ left: 10 })
+      .padding({ left: 5 })
       .width('60%')
     }
     .width('100%')
