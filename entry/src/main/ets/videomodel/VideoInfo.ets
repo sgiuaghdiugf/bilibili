@@ -1,7 +1,7 @@
 export class video{
   id: number
-  img: ResourceStr
-  avatar: ResourceStr
+  img: string
+  avatar: string
   play: string
   barrage: string
   title: string

@@ -1,5 +1,5 @@
 import {video} from '../videomodel/VideoInfo'
-import { videoObjects } from '../videomodel/VideoObject'
+import { videoObject } from '../videomodel/VideoObject'
 import router from '@ohos.router'
 class MyDataSource implements IDataSource {
   private list: number[] = []
@@ -67,7 +67,7 @@ class SwiperInfo{
 
 @Builder function RecommendModule(){
   List(){
-    ForEach(videoObjects, (video: video) => {
+    ForEach(this.videoObjects, (video: video) => {
       ListItem(){
         Column(){
           Stack(){
@@ -157,6 +157,9 @@ export struct Recommend {
   pics: ResourceStr[] = [$r("app.media.swiper_1"), $r('app.media.swiper_2'), $r('app.media.swiper_3')]
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource = new MyDataSource([])
+  videoObjects: video[]
+  @Prop keyword: string
+
 
   swiperInfo: SwiperInfo[] = [
     new SwiperInfo($r("app.media.swiper_1"), '正在直播KPL：广州TTG vs 上海EDG.M'),
@@ -171,6 +174,9 @@ export struct Recommend {
       list.push(this.swiperInfo[i]);
     }
     this.data = new MyDataSource(list)
+
+    videoObject.init()
+    this.videoObjects = videoObject.list
   }
 
   build() {
