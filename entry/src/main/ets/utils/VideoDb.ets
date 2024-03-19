@@ -29,8 +29,8 @@ export function createTable(context) {
   // 获取数据库存储
   data_rdb.getRdbStore(context, STORE_CONFIG, 1, function (err, rdbStore) {
     // 执行创建表的 SQL 语句
-    rdbStore.executeSql(CREATE_TABLE_CODE)
     // rdbStore.executeSql("drop table video");
+    rdbStore.executeSql(CREATE_TABLE_CODE)
     // console.log('create table done.') // 输出日志
   })
 }
@@ -53,7 +53,8 @@ export function insertData(context, list: video[]): any {
           console.error(`${i + 1} ${item.nowLook} Failed to insert data. Code:${err.code}, message:${err.message}`);
           return;
         }
-        console.info(`Succeeded in inserting data. rowId:${rowId}`);
+        // console.log(`${item.img} `)
+        // console.info(`Succeeded in inserting data. rowId:${rowId}`);
       });
     }
     // 返回一个布尔值 true，表示操作成功
