@@ -5,7 +5,7 @@ import { shopCarArray } from '../Class/ShopCarArrayClass'
 @Component
 export struct ShopBar {
   shop_car_item: Commodity;
-  @State count: number = 0;
+  @State count: number = shopCarArray.count
 
   build() {
     Row() {
@@ -44,7 +44,8 @@ export struct ShopBar {
       }
       .onClick(() => {
         shopCarArray.pushCommodity(this.shop_car_item)
-        this.count++
+        shopCarArray.count++
+        this.count = shopCarArray.count
       })
       .justifyContent(FlexAlign.Center)
       .width(120)

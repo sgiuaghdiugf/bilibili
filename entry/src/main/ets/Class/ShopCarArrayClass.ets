@@ -2,6 +2,7 @@ import { Commodity } from '../Class/Commodity'
 
 export class ShopCarArray {
   public shop_car_array: Commodity[] = [];
+  public count: number = 0
 
   pushCommodity(item: Commodity) {
     this.shop_car_array.push(item)

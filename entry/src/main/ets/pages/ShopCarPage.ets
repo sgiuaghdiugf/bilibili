@@ -53,22 +53,30 @@ struct ShopCarPage {
               shopCarArray.shop_car_array,
               (item: Commodity, index) => {
                 ListItem() {
-                  Row() {
-                    Checkbox({ name: `${index}`, group: 'checkboxGroup' })
-                      .selectedColor('#007DFF')
-                      .onChange((value: boolean) => {
-                        if (value) {
-                          this.totPrice += item.price * 0.15
-                          this.totCount++
-                        }
-                        else {
-                          this.totPrice -= item.price * 0.15
-                          this.totCount--
-                        }
-                      })
-                    ShopCarItem({ item: item })
+                  Column() {
+                    if (index > 0) {
+                      Divider()
+                        .color('#E4E5E6')
+                    }
+                    Row() {
+                      Checkbox({ name: `${index}`, group: 'checkboxGroup' })
+                        .selectedColor('#007DFF')
+                        .onChange((value: boolean) => {
+                          if (value) {
+                            this.totPrice += item.price * 0.15
+                            this.totCount++
+                          }
+                          else {
+                            this.totPrice -= item.price * 0.15
+                            this.totCount--
+                          }
+                        })
+                      ShopCarItem({ item: item })
+                    }
+
                   }
                   .width('100%')
+
                 }
                 .padding({ left: 10 })
               }
@@ -139,7 +147,6 @@ struct ShopCarPage {
         .height(60)
         .width('100%')
       }
-      .backgroundColor('#F3F4F6')
       .width('100%')
     }
     .width('100%')

@@ -82,7 +82,7 @@ export struct ShopCarItem {
       .width('60%')
     }
     .width('100%')
-    .padding({ bottom: 10 })
+    .padding({ bottom: 10, top:10 })
     .backgroundColor(Color.White)
     .margin({ bottom: 10 })
     .borderRadius(10)
