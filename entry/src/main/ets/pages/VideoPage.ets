@@ -8,6 +8,8 @@ import { videoObject } from '../videomodel/VideoObject'
   .margin({right: 5})
 }
 
+let avatars: ResourceStr[] = [$r('app.media.video_avatar_1'), $r('app.media.video_avatar_2'), $r('app.media.video_avatar_3'), $r('app.media.video_avatar_4'), $r('app.media.video_avatar_5'), $r('app.media.video_avatar_6'), $r('app.media.video_avatar_7'), $r('app.media.video_avatar_8')]
+
 @Entry
 @Component
 struct VideoPage {
@@ -103,7 +105,7 @@ struct VideoPage {
             Row(){
               Row(){
                 Stack(){
-                  Image(this.videoObject.avatar)
+                  Image(avatars[Number(this.videoObject.avatar)])
                     .width(36)
                     .border({radius: 18})
                     .margin({bottom: 5})
