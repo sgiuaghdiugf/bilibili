@@ -83,6 +83,11 @@ struct Setting {
            Row(){
              Text('退出登录')
            }
+           .onClick(()=>{
+             router.replaceUrl(
+               {url:'pages/LoginPage'}
+             )
+           })
            .width('100%')
            .height(50)
            .padding({left:20,right:20})

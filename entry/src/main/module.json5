@@ -6,6 +6,11 @@
       }
     ],
     "name": "entry",
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ],
     "type": "entry",
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
