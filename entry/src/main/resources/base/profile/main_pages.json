@@ -21,7 +21,8 @@
     "pages/HistoryPage",
     "pages/CommodityDetailPage",
     "pages/LoginPage",
-    "pages/RegistPage",
-    "pages/User"
+    "pages/User",
+    "pages/ShopCarPage",
+    "pages/RegistPage"
   ]
 }
