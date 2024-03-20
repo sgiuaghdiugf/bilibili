@@ -70,6 +70,7 @@ struct MumberShopPage {
         .width('100%')
         .justifyContent(FlexAlign.SpaceBetween)
 
+
         Row() {
           Row() {
             Image($r('app.media.coin'))
@@ -82,6 +83,7 @@ struct MumberShopPage {
           .height(30)
           .backgroundColor('#F5F6F6')
           .borderRadius(5)
+
 
           Row() {
             Row() {
@@ -161,7 +163,7 @@ struct MumberShopPage {
       }
       .backgroundColor('#F0F2F4')
       .layoutWeight(1)
-      // .padding({ left: 10, right: 10, top: 10 })
+      .padding({ left: 10, right: 10, top: 10 })
 
       BottomBar(({ page_index: 3 }))
 

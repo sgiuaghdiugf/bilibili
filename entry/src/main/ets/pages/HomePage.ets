@@ -94,7 +94,9 @@ struct HomePage {
       .alignItems(HorizontalAlign.Center)
       .justifyContent(FlexAlign.End)
 
-      if (this.ids === 2) {
+      if (this.ids === 1) {
+        Recommend({ keyword: this.keyword })
+      } else if (this.ids === 2) {
         HotPage()
       } else if (this.ids === 0) {
         LivePage()
