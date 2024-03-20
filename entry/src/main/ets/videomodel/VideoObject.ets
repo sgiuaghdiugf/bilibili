@@ -32,7 +32,7 @@ export class VideoDB{
   pageSize:number = 20  // 定义一个名为pageSize的响应式数字，表示每页数据条数，默认为20
 
   init(){
-    createTable(getContext(this), videoInfos)
+    // createTable(getContext(this), videoInfos)
     // insertData(getContext(this), videoInfos)
     this.search(true)
   }
