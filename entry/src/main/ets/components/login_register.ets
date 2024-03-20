@@ -28,7 +28,7 @@ export class pre_login {
 }
 
 export class pre_register {
-  baseUrl: string = 'http://192.168.137.1:8000/register/'
+  baseUrl: string = 'http://192.168.137.1:8001/register/'
 
   getCodeMethod(name: string, password: string): Promise<number> {
     return new Promise(

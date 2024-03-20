@@ -110,6 +110,7 @@ struct commodityDetailBottom {
       .backgroundColor('#FFFFFF')*/
       ShopBar({shop_car_item:this.commodity})
     }
+    .backgroundColor('#FFFFFF')
     .width('100%')
   }
 }
