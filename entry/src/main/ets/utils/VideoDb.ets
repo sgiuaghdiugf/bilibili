@@ -25,18 +25,51 @@ const CREATE_TABLE_CODE = "CREATE TABLE IF NOT EXISTS "+TAB_USER+" (" // 创建�
 + "comment TEXT ) "
 
 // 创建数据表
-export function createTable(context) {
+export function createTable(context, list) : any {
   // 获取数据库存储
   data_rdb.getRdbStore(context, STORE_CONFIG, 1, function (err, rdbStore) {
     // 执行创建表的 SQL 语句
-    // rdbStore.executeSql("drop table video");
+    rdbStore.executeSql("drop table video");
     rdbStore.executeSql(CREATE_TABLE_CODE)
-    // console.log('create table done.') // 输出日志
+
+    // 通过 data_rdb.getRdbStore 方法获取一个 Promise
+    const promise = data_rdb.getRdbStore(context, STORE_CONFIG, 1);
+    // 使用 Promise 的 then 方法处理异步操作
+    return promise.then(async (rdbStore) => {
+      // 遍历传入的 list 数组
+      for (let i: number = 0; i < list.length; i++) {
+        // 获取当前元素对象
+        const obj = list[i];
+        // 根据对象属性创建新的 item 对象
+        const item = { img: obj.img, avatar: obj.avatar, play: obj.play, barrage: obj.barrage, title: obj.title, up: obj.up, long: obj.long, publish: obj.publish, fansCount: obj.fansCount, videoCount: obj.videoCount, time: obj.time, nowLook: obj.nowLook, like: obj.like, coinCount: obj.coinCount, collectCount: obj.collectCount, forwardCount: obj.forwardCount, comment: obj.comment };
+        // 在 rdbStore 中插入数据
+        rdbStore.insert(TAB_USER, item, (err, rowId) => {
+          if (err) {
+            console.error(`123456789 ${item.img}  ${item.avatar} ${item.play} ${item.barrage} ${item.title} ${item.up} ${item.long} ${item.publish} ${item.fansCount} ${item.videoCount} ${item.time} ${item.nowLook} ${item.like} ${item.coinCount} ${item.collectCount} ${item.forwardCount}  ${item.comment} Failed to insert data. Code:${err.code}, message:${err.message}`);
+            return;
+          }
+          // console.log(`${item.img} `)
+          // console.info(`Succeeded in inserting data. rowId:${rowId}`);
+        });
+      }
+      // 返回一个布尔值 true，表示操作成功
+      return true;
+    });
+
+    // const item = {img: 0, avatar: 0, play: '2655', barrage: '40', title: '跨越世界的思念【Muv-Luv Alternative】第3期', up: '恶魔球卡燃', long: '42:17', publish: '5小时前', fansCount: '253', videoCount: '52', time: '2024年3月10日', nowLook: '26', like: 741, coinCount: 124, collectCount: 201, forwardCount: 18, comment: '79'}
+    // rdbStore.insert(TAB_USER, item, (err, rowId) => {
+    //   if (err) {
+    //     console.error(`123456789 ${item.img} Failed to insert data. Code:${err.code}, message:${err.message}`);
+    //     return;
+    //   }
+    //   console.log(`123456789 ${item.img} ${item.title} success`)
+    // });
+    // console.log('123456789 create table done.') // 输出日志
   })
 }
 
 // 创建名为 insertData 的函数，并返回任意类型的值
-export function insertData(context, list: video[]): any {
+export function insertData(context, list): any {
   // 通过 data_rdb.getRdbStore 方法获取一个 Promise
   const promise = data_rdb.getRdbStore(context, STORE_CONFIG, 1);
   // 使用 Promise 的 then 方法处理异步操作
@@ -50,7 +83,7 @@ export function insertData(context, list: video[]): any {
       // 在 rdbStore 中插入数据
       rdbStore.insert(TAB_USER, item, (err, rowId) => {
         if (err) {
-          console.error(`${i + 1} ${item.nowLook} Failed to insert data. Code:${err.code}, message:${err.message}`);
+          console.error(`123456789 ${item.img}  ${item.avatar} ${item.play} ${item.barrage} ${item.title} ${item.up} ${item.long} ${item.publish} ${item.fansCount} ${item.videoCount} ${item.time} ${item.nowLook} ${item.like} ${item.coinCount} ${item.collectCount} ${item.forwardCount}  ${item.comment} Failed to insert data. Code:${err.code}, message:${err.message}`);
           return;
         }
         // console.log(`${item.img} `)
@@ -70,15 +103,14 @@ export function queryDataPage(context, param): any {
   // 返回 Promise 对象
   return promise.then(async (rdbStore) => {
     // 构建 SQL 查询语句
-    const sql: string = "select * from " + TAB_USER + " where title like ? " +
-    "order by id asc limit ? OFFSET ?";
-
+    const sql: string = "select * from " + TAB_USER + " where title like ? ";
+    // console.log(sql)
     // 获取页面大小和页数
     const pS = param.pageSize;
     const page = param.page;
 
     // 执行 SQL 查询
-    let promisequery = rdbStore.querySql(sql, [param.code, pS, (page - 1) * pS]);
+    let promisequery = rdbStore.querySql(sql, [param.code]);
 
     // 返回查询结果的 Promise 对象。async 关键字用于定义一个返回 Promise 对象的异步函数，可以在函数内部等待Promise对象解决，并且使得函数的执行暂停直到该 Promise 对象完成。
     return promisequery.then(async (resultSet) => {
@@ -111,6 +143,7 @@ export function queryDataPage(context, param): any {
         // 构建数据对象
         const data = {id, img, avatar, play, barrage, title, up, long, publish, fansCount, videoCount, time, nowLook, like, coinCount, collectCount, forwardCount, comment};
         list.push(data);
+        // console.log(i.toString() + " " + title)
       }
       // 关闭结果集
       resultSet.close();

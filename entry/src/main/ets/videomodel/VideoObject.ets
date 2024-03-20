@@ -12,8 +12,8 @@ import {createTable, insertData, queryDataPage} from "../utils/VideoDb"
 //   new video(8, $r('app.media.video_1'), $r('app.media.video_avatar_8'), "43.6万", "799", "广州番禺凌晨吃猪杂，店隔壁就是屠宰场，最新鲜猪杂吃了3斤", "肚子等待大嘴", "04:55", "5天前", "253", "52", "2024年2月27日", "5", 345, 124, 123, 63, "9001"),
 // ]
 // export let videoObjects: video[]
-let videoInfos: video[] = [
-  new video(1, 0, 0, "2655", "40", "跨越世界的思念【Muv-Luv Alternative】第3期", "恶魔球卡燃", "42:17", '5小时前', "253", "52", "2024年3月10日", "26", 741, 124, 201, 18, "79"),
+export let videoInfos: video[] = [
+  new video(1, 0, 0, '2655', '40', '跨越世界的思念【Muv-Luv Alternative】第3期', '恶魔球卡燃', '42:17', '5小时前', '253', '52', '2024年3月10日', '26', 741, 124, 201, 18, '79'),
   new video(2, 1, 1, "111.7万", "1171", "麻枝准最新力作《炽焰天穹》首曝PV、 「简中服特别寄语」首公开", "炽焰天穹_HBR", "02:22", "3小时前", "253", "52", "2024年1月20日", "12万", 235322, 12031, 205422, 10023, "23.4万"),
   new video(3, 2, 2, "4.5万", "44", "【中日歌词/全曲/MyGO】輪符雨", "Mikoi_", "03:38", "1天前", "253", "52", "2023年12月19日", "26", 2342, 234, 34, 1, "102"),
   new video(4, 3, 3, "9847", "53", "从galgame到手游，真的只有无奈与妥协吗[炽焰天穹/红烧天堂]", "放水之刃", "10:36", "3天前", "253", "52", "2022年1月12日", "2", 3423, 87, 201, 3453, "204"),
@@ -23,7 +23,8 @@ let videoInfos: video[] = [
   new video(8, 7, 7, "43.6万", "799", "广州番禺凌晨吃猪杂，店隔壁就是屠宰场，最新鲜猪杂吃了3斤", "肚子等待大嘴", "04:55", "5天前", "253", "52", "2024年2月27日", "5", 345, 124, 123, 63, "9001")
 ]
 
-class VideoDB{
+@Observed
+export class VideoDB{
   videoObjects: video[] = videoInfos
   list:Array<any> = []  // 定义一个名为list的响应式数组，用于存储数据
   keyword:string = ""  // 定义一个名为keyword的响应式字符串，用于存储搜索关键词
@@ -31,8 +32,8 @@ class VideoDB{
   pageSize:number = 20  // 定义一个名为pageSize的响应式数字，表示每页数据条数，默认为20
 
   init(){
-    createTable(getContext(this))
-    insertData(getContext(this), videoInfos)
+    createTable(getContext(this), videoInfos)
+    // insertData(getContext(this), videoInfos)
     this.search(true)
   }
 
@@ -55,9 +56,6 @@ class VideoDB{
             this.list = this.list.concat(data);  // 将返回的数据与已有数据合并，并更新list
           }
           this.videoObjects = this.list
-          for(let i = 0; i < this.videoObjects.length; i++){
-            console.log(this.videoObjects[i].img.toString())
-          }
         }
       })
   }
