@@ -1,7 +1,7 @@
 import axios from '@ohos/axios'
 
 export class pre_login {
-  baseUrl: string = 'http://192.168.137.1:8000/login/'
+  baseUrl: string = 'http://192.168.122.194:8000/login/'
 
   getCodeMethod(name: string, password: string): Promise<number> {
     return new Promise(
@@ -28,7 +28,8 @@ export class pre_login {
 }
 
 export class pre_register {
-  baseUrl: string = 'http://192.168.137.1:8001/register/'
+  baseUrl: string = 'http://192.168.122.194:8000/register/'
+
 
   getCodeMethod(name: string, password: string): Promise<number> {
     return new Promise(
