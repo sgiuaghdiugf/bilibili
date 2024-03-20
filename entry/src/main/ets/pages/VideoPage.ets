@@ -1,7 +1,7 @@
 import router from '@ohos.router'
 import { VideoCover } from '../components/VideoCover'
 import { video } from '../videomodel/VideoInfo'
-import { videoObject } from '../videomodel/VideoObject'
+import { videoInfos } from '../videomodel/VideoObject'
 @Extend(Text) function textGrayMargin(){
   .fontSize(12)
   .fontColor('#b7b9be')
@@ -14,13 +14,18 @@ let avatars: ResourceStr[] = [$r('app.media.video_avatar_1'), $r('app.media.vide
 @Component
 struct VideoPage {
   @State index: number = router.getParams()['id']
-  @State videoObject: video = videoObject.list[this.index]
+  @State videoObject: video = videoInfos[this.index]
   @State videoSrc: Resource = $rawfile('原神启动.mp4')
   // @State previewUri: Resource = $r('app.media.cover')
   @State curRate: PlaybackSpeed = PlaybackSpeed.Speed_Forward_1_00_X
   @State isAutoPlay: boolean = false
   @State showControls: boolean = true
   controller: VideoController = new VideoController()
+
+  aboutToAppear(){
+    console.log("****" + this.videoObject.id.toString())
+    console.log(this.videoObject.img.toString())
+  }
 
 
   icons: ResourceStr[] = [
@@ -256,8 +261,6 @@ struct VideoPage {
         }
       }
       .layoutWeight(1)
-
-
 
     }
   }

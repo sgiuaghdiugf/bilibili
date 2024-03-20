@@ -21,6 +21,9 @@
     "pages/HistoryPage",
     "pages/CommodityDetailPage",
     "pages/LoginPage",
+    "pages/RegistPage",
+    "pages/User",
+    "pages/SearchPage",
     "pages/User",
     "pages/ShopCarPage",
     "pages/RegistPage"

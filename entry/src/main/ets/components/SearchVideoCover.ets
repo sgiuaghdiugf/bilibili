@@ -1,18 +1,18 @@
 import router from '@ohos.router'
 import { video } from '../videomodel/VideoInfo'
-import { videoInfos } from '../videomodel/VideoObject'
+import { videoCover } from '../videomodel/VideoObject'
 
 let imgs: ResourceStr[] = [$r('app.media.video_1'), $r('app.media.video_2'), $r('app.media.video_3'), $r('app.media.video_4'), $r('app.media.video_5'), $r('app.media.video_6'), $r('app.media.video_7'), $r('app.media.video_8')]
 
 @Component
 export struct VideoCover {
   playingId: number
-  @State videoObjects: video[] = videoInfos
+  @State videoObjects: video[] = videoCover.videoObjects
 
-  // aboutToAppear(){
-  //   videoCover.init()
-  //   this.videoObjects = videoCover.videoObjects
-  // }
+  aboutToAppear(){
+    videoCover.init()
+    this.videoObjects = videoCover.videoObjects
+  }
 
   build() {
     List(){
