@@ -64,6 +64,7 @@ struct LoginPage {
                 .width(18)
                 .margin({ right: '2%' })
               TextInput({ placeholder: '请输入密码' })
+                .type(InputType.Password)
                 .width('93%')
                 .placeholderColor('#c0c0c0')
                 .backgroundColor(Color.White)
@@ -169,6 +170,20 @@ struct LoginPage {
               })
               .fontSize(16)
               .fontColor('#6c6c6c')
+
+            Text('我就随便逛逛')
+              .margin({top:20})
+              .fontColor('#0076ff')
+              .onClick(()=>{
+
+                router.replaceUrl(
+                  {
+                    url:'pages/HomePage',
+                  }
+                )
+
+              })
+              .fontSize(16)
           }
 
         }

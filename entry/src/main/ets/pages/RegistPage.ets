@@ -63,6 +63,7 @@ struct RegisterPage {
                 .width(18)
                 .margin({right: '2%'})
               TextInput({placeholder: '请输入密码'})
+                .type(InputType.Password)
                 .onChange(value => {
                   this.password = value;
                 })

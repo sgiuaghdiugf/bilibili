@@ -42,8 +42,6 @@ export class pre_register {
           }
         ).then(resp => {
           if (resp.status === 200) {
-            // console.info('successful', resp.data.code)
-            // console.info(resp.data.msg)
             resolve(resp.data.code)
           }
         }).catch(error => {
