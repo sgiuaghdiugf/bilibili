@@ -83,7 +83,8 @@ export function insertData(context, list): any {
       // 在 rdbStore 中插入数据
       rdbStore.insert(TAB_USER, item, (err, rowId) => {
         if (err) {
-          console.error(`123456789 ${item.img}  ${item.avatar} ${item.play} ${item.barrage} ${item.title} ${item.up} ${item.long} ${item.publish} ${item.fansCount} ${item.videoCount} ${item.time} ${item.nowLook} ${item.like} ${item.coinCount} ${item.collectCount} ${item.forwardCount}  ${item.comment} Failed to insert data. Code:${err.code}, message:${err.message}`);
+          console.error(`123456789 ${item.img}  ${item.avatar} ${item.play} ${item.barrage} ${item.title} ${item.up} ${item.long} ${item.publish} ${item.fansCount} ${item.videoCount} ${item.time} ${item.nowLook} ${item.like} ${item.coinCount} ${item.collectCount} ${item.forwardCount}  ${item.comment} F
+          ailed to insert data. Code:${err.code}, message:${err.message}`);
           return;
         }
         // console.log(`${item.img} `)

@@ -62,7 +62,6 @@ class SwiperInfo{
   .margin({left: 3, right: 3, bottom: 3})
   .itemSpace(10)
   .indicatorStyle({right: 10, size: 12, color: '#8a8182', selectedColor: Color.White})
-
 }
 
 let imgs: ResourceStr[] = [$r('app.media.video_1'), $r('app.media.video_2'), $r('app.media.video_3'), $r('app.media.video_4'), $r('app.media.video_5'), $r('app.media.video_6'), $r('app.media.video_7'), $r('app.media.video_8')]
